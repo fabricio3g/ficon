@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M4 2.5h2l1.5 2.5L6 6.5l3.5 3.5L11 8.5l2.5 1.5v2a1.5 1.5 0 0 1-1.5 1.5A11.1 11.1 0 0 1 2.5 4a1.5 1.5 0 0 1 1.5-1.5z"/>
+  <style>
+    svg { animation: ring 300ms ease-in-out; }
+    @keyframes ring { 20% { rotate: -12deg; } 40% { rotate: 12deg; } 60% { rotate: -8deg; } 80% { rotate: 6deg; } }
+  </style>
+</svg>

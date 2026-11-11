@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path class="a" d="M4.5 5.5 8 2l3.5 3.5"/>
+  <path class="b" d="M4.5 10.5 8 14l3.5-3.5"/>
+  <style>
+    .a { animation: rise 240ms ease-out; }
+    .b { animation: fall 240ms ease-out; }
+    @keyframes rise { 50% { translate: 0 -1px; } }
+    @keyframes fall { 50% { translate: 0 1px; } }
+  </style>
+</svg>

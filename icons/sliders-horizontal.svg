@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 3.5h10M3 8h10M3 12.5h10"/>
+  <path class="a" d="M10 2v3"/>
+  <path class="b" d="M5.5 6.5v3"/>
+  <path class="c" d="M9 11v3"/>
+  <style>
+    .a { animation: left 260ms ease-in-out; }
+    .b { animation: right 260ms ease-in-out 20ms; }
+    .c { animation: left 260ms ease-in-out 40ms; }
+    @keyframes left { 50% { translate: -1.5px 0; } }
+    @keyframes right { 50% { translate: 1.5px 0; } }
+  </style>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M9 2H5a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 5 14h6a1.5 1.5 0 0 0 1.5-1.5v-7z"/>
+  <path d="M9 2v3.5h3.5"/>
+  <path class="a" d="M8 7.75v4M6 9.75h4"/>
+  <style>
+    .a { animation: turn 260ms ease-out; }
+    @keyframes turn { from { rotate: -90deg; } }
+  </style>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="8" cy="8" r="6"/>
+  <path class="a" d="M8 8l4.24-4.24"/>
+  <circle class="b" cx="5" cy="10.5" r=".85" fill="currentColor" stroke="none"/>
+  <style>
+    .a { transform-box: view-box; transform-origin: 8px 8px; animation: sweep 280ms ease-out; }
+    .b { animation: blip 160ms ease-out 120ms; }
+    @keyframes sweep { from { rotate: -150deg; } }
+    @keyframes blip { 50% { opacity: 0.3; } }
+  </style>
+</svg>

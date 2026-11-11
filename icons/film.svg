@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="2.5" y="3" width="11" height="10" rx="1.5"/>
+  <path d="M5.5 3v10M10.5 3v10"/>
+  <path class="a" d="M2.5 8h3M10.5 8h3"/>
+  <style>
+    .a { animation: advance 260ms ease-out; }
+    @keyframes advance { 50% { translate: 0 1.5px; } }
+  </style>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 4.5A1.5 1.5 0 0 1 4.5 3h6L13 5.5v6a1.5 1.5 0 0 1-1.5 1.5h-7A1.5 1.5 0 0 1 3 11.5zM5.5 3v3h4V3"/>
+  <path class="a" pathLength="1" d="M5.5 13V9.5h5V13"/>
+  <style>
+    .a { stroke-dasharray: 1; animation: draw 260ms ease-out; }
+    @keyframes draw { from { stroke-dashoffset: 1; } }
+  </style>
+</svg>

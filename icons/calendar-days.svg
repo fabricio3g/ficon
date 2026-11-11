@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="2.5" y="3.5" width="11" height="10.5" rx="1.5"/>
+  <path d="M5.5 2v3M10.5 2v3M2.5 6.5h11"/>
+  <circle class="a" cx="5.5" cy="9" r=".85" fill="currentColor" stroke="none"/>
+  <circle class="a" cx="8" cy="9" r=".85" fill="currentColor" stroke="none"/>
+  <circle class="a" cx="10.5" cy="9" r=".85" fill="currentColor" stroke="none"/>
+  <circle class="b" cx="5.5" cy="11.5" r=".85" fill="currentColor" stroke="none"/>
+  <circle class="b" cx="8" cy="11.5" r=".85" fill="currentColor" stroke="none"/>
+  <circle class="b" cx="10.5" cy="11.5" r=".85" fill="currentColor" stroke="none"/>
+  <style>
+    .a { animation: fill 200ms ease-out; }
+    .b { animation: fill 200ms ease-out 80ms; }
+    @keyframes fill { from { opacity: 0.3; scale: 0.85; } }
+  </style>
+</svg>

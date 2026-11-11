@@ -1,0 +1,20 @@
+{
+  "name": "ficon",
+  "version": "0.1.0",
+  "description": "207 icons drawn for 16px, each with its own hover animation. Plain SVG and CSS.",
+  "license": "MIT",
+  "type": "module",
+  "repository": "github:fabricio3g/ficon",
+  "files": ["icons", "dist", "svelte"],
+  "exports": {
+    ".": { "svelte": "./svelte/index.ts" },
+    "./ficon.css": "./dist/ficon.css",
+    "./icons/*": "./icons/*"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs --sheet index.html",
+    "check": "node scripts/build.mjs --check"
+  },
+  "peerDependencies": { "svelte": "^5.0.0" },
+  "peerDependenciesMeta": { "svelte": { "optional": true } }
+}

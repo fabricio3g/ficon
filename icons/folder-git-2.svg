@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h2.75L7.5 5h5A1.5 1.5 0 0 1 14 6.5v5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 11.5z"/>
+  <circle cx="6" cy="10.5" r="1"/>
+  <path class="a" d="M6 9.5A1.5 1.5 0 0 1 7.5 8H9" pathLength="1"/>
+  <circle class="b" cx="10" cy="8" r="1"/>
+  <style>
+    .a { stroke-dasharray: 1; animation: draw 180ms ease-out; }
+    .b { animation: pop 140ms ease-out 140ms; }
+    @keyframes draw { from { stroke-dashoffset: 1; } }
+    @keyframes pop { 50% { scale: 1.15; } }
+  </style>
+</svg>

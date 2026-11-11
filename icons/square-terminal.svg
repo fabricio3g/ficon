@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="3" y="3" width="10" height="10" rx="1.5"/>
+  <path class="a" d="M5.5 6l2 2-2 2"/>
+  <path class="b" d="M9 10h1.5"/>
+  <style>
+    .a { animation: prompt 220ms ease-out; }
+    .b { animation: blink 280ms linear; }
+    @keyframes prompt { 50% { translate: 0.75px 0; } }
+    @keyframes blink { 25% { opacity: 0.3; } 50% { opacity: 1; } 75% { opacity: 0.3; } }
+  </style>
+</svg>

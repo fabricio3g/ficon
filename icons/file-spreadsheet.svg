@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M9 2H5a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 5 14h6a1.5 1.5 0 0 0 1.5-1.5v-7z"/>
+  <path d="M9 2v3.5h3.5"/>
+  <path class="a" d="M5.75 8.5h4.5" pathLength="1"/>
+  <path class="a" d="M5.75 11.5h4.5" pathLength="1"/>
+  <path class="b" d="M6.5 7.75v4.5" pathLength="1"/>
+  <path class="b" d="M9.5 7.75v4.5" pathLength="1"/>
+  <style>
+    .a { stroke-dasharray: 1; animation: draw 180ms ease-out; }
+    .b { stroke-dasharray: 1; animation: draw 180ms ease-out 100ms; }
+    @keyframes draw { from { stroke-dashoffset: 1; } }
+  </style>
+</svg>

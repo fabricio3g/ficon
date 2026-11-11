@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3.5 4.5 7 8l-3.5 3.5"/>
+  <path class="a" d="M8.5 11.5h4"/>
+  <style>
+    .a { animation: blink 280ms ease-in-out; }
+    @keyframes blink { 50% { opacity: 0.3; } }
+  </style>
+</svg>

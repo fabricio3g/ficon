@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path class="a" d="M2.5 4.5h11M6 4.5V3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v1.5"/>
+  <path d="M4 4.5l.5 8A1.5 1.5 0 0 0 6 14h4a1.5 1.5 0 0 0 1.5-1.5l.5-8"/>
+  <style>
+    .a { transform-box: view-box; transform-origin: 13.5px 4.5px; animation: lid 280ms ease-out; }
+    @keyframes lid { 45% { rotate: 14deg; translate: 0 -1px; } }
+  </style>
+</svg>

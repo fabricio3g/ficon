@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="5" y="5.5" width="6" height="8" rx="3"/>
+  <path d="M6 5.5a2 2 0 0 1 4 0"/>
+  <path class="a" d="M5 9.5H2.5M11 9.5h2.5M5 7 3 5.5M11 7l2-1.5M5 12l-2 1.5M11 12l2 1.5"/>
+  <style>
+    .a { animation: scuttle 260ms ease-in-out; }
+    @keyframes scuttle { 25% { translate: 0 -0.75px; } 75% { translate: 0 0.75px; } }
+  </style>
+</svg>

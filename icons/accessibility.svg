@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="8" cy="3.5" r="1"/>
+  <path class="a" d="M3.5 6.5h9"/>
+  <path d="M8 6.5V10l-2.5 3.5M8 10l2.5 3.5"/>
+  <style>
+    .a { animation: open 260ms ease-in-out; }
+    @keyframes open { 50% { scale: 1.12 1; translate: 0 -0.5px; } }
+  </style>
+</svg>

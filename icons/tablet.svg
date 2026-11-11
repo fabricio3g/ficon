@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="3" y="2" width="10" height="12" rx="1.5"/>
+  <path d="M7 11h2"/>
+  <style>
+    svg { animation: tip 280ms ease-in-out; }
+    @keyframes tip { 50% { rotate: -12deg; } }
+  </style>
+</svg>

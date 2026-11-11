@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M7.5 3.5 4.5 6H3a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h1.5l3 2.5z"/>
+  <path class="a" pathLength="1" d="M10 6l4 4"/>
+  <path class="b" pathLength="1" d="M14 6l-4 4"/>
+  <style>
+    .a { stroke-dasharray: 1; animation: cut 150ms ease-out; }
+    .b { stroke-dasharray: 1; animation: cross 150ms ease-out 120ms; }
+    @keyframes cut { from { stroke-dashoffset: 1; } }
+    @keyframes cross { from { stroke-dashoffset: 1; } }
+  </style>
+</svg>

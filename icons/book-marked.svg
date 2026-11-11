@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3.5 12.5v-9A1.5 1.5 0 0 1 5 2h7.5v12H5a1.5 1.5 0 0 1 0-3h7.5"/>
+  <path class="a" d="M6.5 2v5.5L8 6l1.5 1.5V2"/>
+  <style>
+    .a { transform-origin: 50% 0%; animation: mark 260ms ease-out; }
+    @keyframes mark { 50% { scale: 1 1.15; } }
+  </style>
+</svg>

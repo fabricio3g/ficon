@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="8" cy="8" r="6"/>
+  <path class="a" d="M10.5 5.5 9 9l-3.5 1.5L7 7z"/>
+  <style>
+    .a { transform-box: view-box; transform-origin: 8px 8px; animation: swing 300ms ease-in-out; }
+    @keyframes swing { 35% { rotate: 25deg; } 70% { rotate: -10deg; } }
+  </style>
+</svg>

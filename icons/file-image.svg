@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M9 2H5a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 5 14h6a1.5 1.5 0 0 0 1.5-1.5v-7z"/>
+  <path d="M9 2v3.5h3.5"/>
+  <circle class="a" cx="9.75" cy="8.25" r=".85" fill="currentColor" stroke="none"/>
+  <path d="M5.5 12 7.75 9.75 10 12"/>
+  <style>
+    .a { animation: rise 260ms ease-out; }
+    @keyframes rise { from { translate: 0 1.5px; opacity: 0.3; } }
+  </style>
+</svg>

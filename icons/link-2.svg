@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path class="a" d="M6.5 4.5h-1a3.5 3.5 0 0 0 0 7h1"/>
+  <path class="b" d="M9.5 4.5h1a3.5 3.5 0 0 1 0 7h-1"/>
+  <path d="M5.5 8h5"/>
+  <style>
+    .a { animation: join-left 240ms ease-out; }
+    .b { animation: join-right 240ms ease-out; }
+    @keyframes join-left { from { translate: -1.5px 0; } }
+    @keyframes join-right { from { translate: 1.5px 0; } }
+  </style>
+</svg>

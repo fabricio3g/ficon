@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <circle class="a" cx="8" cy="8" r="2.5"/>
+  <path d="M10.5 5.5v3a1.75 1.75 0 0 0 3.5 0V8a6 6 0 1 0-2.4 4.8"/>
+  <style>
+    .a { animation: ping 260ms ease-in-out; }
+    @keyframes ping { 50% { scale: 1.15; } }
+  </style>
+</svg>

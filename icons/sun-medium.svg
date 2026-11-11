@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="8" cy="8" r="2"/>
+  <path class="a" d="M8 2v1.5M8 12.5V14M2 8h1.5M12.5 8H14M3.75 3.75l1 1M11.25 11.25l1 1M3.75 12.25l1-1M11.25 4.75l1-1"/>
+  <style>
+    .a { transform-box: view-box; transform-origin: 8px 8px; animation: shine 280ms ease-out; }
+    @keyframes shine { from { rotate: -45deg; opacity: 0.4; } }
+  </style>
+</svg>

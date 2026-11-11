@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M9.5 5h3M3.5 11h3"/>
+  <circle class="a" cx="5" cy="5" r="2"/>
+  <circle class="b" cx="11" cy="11" r="2"/>
+  <style>
+    .a { animation: right 260ms ease-in-out; }
+    .b { animation: left 260ms ease-in-out; }
+    @keyframes right { 50% { translate: 1.5px 0; } }
+    @keyframes left { 50% { translate: -1.5px 0; } }
+  </style>
+</svg>

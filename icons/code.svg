@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path class="a" d="M6 4.5 2.5 8 6 11.5"/>
+  <path class="b" d="M10 4.5 13.5 8 10 11.5"/>
+  <style>
+    .a { animation: open-l 240ms ease-out; }
+    .b { animation: open-r 240ms ease-out; }
+    @keyframes open-l { 50% { translate: -1px 0; } }
+    @keyframes open-r { 50% { translate: 1px 0; } }
+  </style>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M9 2H5a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 5 14h6a1.5 1.5 0 0 0 1.5-1.5v-7z"/>
+  <path d="M9 2v3.5h3.5"/>
+  <circle class="a" cx="7.25" cy="11" r="1.25"/>
+  <path class="a" d="M8.5 11V7.75l1.75 1"/>
+  <style>
+    .a { transform-box: view-box; transform-origin: 7.25px 11px; animation: bob 280ms ease-in-out; }
+    @keyframes bob { 33% { rotate: -10deg; } 66% { rotate: 6deg; } }
+  </style>
+</svg>

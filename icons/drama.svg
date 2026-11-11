@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3.5 3.5h9V8a4.5 4.5 0 0 1-9 0z"/>
+  <circle cx="6" cy="6.25" r=".85" fill="currentColor" stroke="none"/>
+  <circle cx="10" cy="6.25" r=".85" fill="currentColor" stroke="none"/>
+  <path class="a" d="M6 8.75a2.5 2.5 0 0 0 4 0"/>
+  <style>
+    .a { transform-origin: 50% 0%; animation: grin 260ms ease-out; }
+    @keyframes grin { 50% { scale: 1.15; } }
+  </style>
+</svg>

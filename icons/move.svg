@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M8 2v12M2 8h12"/>
+  <path class="a" d="M6 4l2-2 2 2"/>
+  <path class="b" d="M12 6l2 2-2 2"/>
+  <path class="c" d="M6 12l2 2 2-2"/>
+  <path class="d" d="M4 6 2 8l2 2"/>
+  <style>
+    .a { animation: up 260ms ease-out; }
+    .b { animation: right 260ms ease-out; }
+    .c { animation: down 260ms ease-out; }
+    .d { animation: left 260ms ease-out; }
+    @keyframes up { 50% { translate: 0 -1px; } }
+    @keyframes right { 50% { translate: 1px 0; } }
+    @keyframes down { 50% { translate: 0 1px; } }
+    @keyframes left { 50% { translate: -1px 0; } }
+  </style>
+</svg>

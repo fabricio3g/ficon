@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M2.34 8A5.657 5.657 0 0 1 12 4l1 1M10 5h3V2"/>
+  <path d="M13.66 8A5.657 5.657 0 0 1 4 12l-1-1M3 14v-3h3"/>
+  <style>
+    svg { animation: spin 300ms ease-out; }
+    @keyframes spin { from { rotate: -180deg; } }
+  </style>
+</svg>

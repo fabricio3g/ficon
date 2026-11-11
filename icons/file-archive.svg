@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M9 2H5a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 5 14h6a1.5 1.5 0 0 0 1.5-1.5v-7z"/>
+  <path d="M9 2v3.5h3.5"/>
+  <circle class="a" cx="7.25" cy="7.75" r=".85" fill="currentColor" stroke="none"/>
+  <circle class="b" cx="8.75" cy="9.75" r=".85" fill="currentColor" stroke="none"/>
+  <circle class="c" cx="7.25" cy="11.75" r=".85" fill="currentColor" stroke="none"/>
+  <style>
+    .a { animation: zip 200ms ease-out; }
+    .b { animation: zip 200ms ease-out 50ms; }
+    .c { animation: zip 200ms ease-out 100ms; }
+    @keyframes zip { 50% { translate: 0 1px; opacity: 0.4; } }
+  </style>
+</svg>
