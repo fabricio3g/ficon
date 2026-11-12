@@ -1,13 +1,15 @@
 {
   "name": "ficon",
   "version": "0.2.0",
-  "description": "207 icons drawn for 16px, each with its own hover animation. Plain SVG and CSS.",
+  "description": "208 icons drawn for 16px, each with its own hover animation. Plain SVG and CSS.",
   "license": "MIT",
   "type": "module",
   "repository": "github:fabricio3g/ficon",
-  "files": ["icons", "dist", "svelte"],
+  "files": ["icons", "dist", "svelte", "vue", "react"],
   "exports": {
     ".": { "svelte": "./svelte/index.ts" },
+    "./vue": { "types": "./vue/index.d.ts", "default": "./vue/index.js" },
+    "./react": { "types": "./react/index.d.ts", "default": "./react/index.js" },
     "./ficon.css": "./dist/ficon.css",
     "./icons/*": "./icons/*"
   },
@@ -15,6 +17,6 @@
     "build": "node scripts/build.mjs --sheet index.html",
     "check": "node scripts/build.mjs --check"
   },
-  "peerDependencies": { "svelte": "^5.0.0" },
-  "peerDependenciesMeta": { "svelte": { "optional": true } }
+  "peerDependencies": { "react": ">=18", "svelte": "^5.0.0", "vue": "^3.3.0" },
+  "peerDependenciesMeta": { "react": { "optional": true }, "svelte": { "optional": true }, "vue": { "optional": true } }
 }

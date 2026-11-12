@@ -20,6 +20,8 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
 .ficon-brain .a { transform-origin: 100% 50%; }
 .ficon-brain .b { transform-origin: 0% 50%; }
 .ficon-briefcase .a { transform-box: view-box; transform-origin: 8px 2.5px; }
+.ficon-burst .a { transform-box: view-box; transform-origin: 8px 8px; }
+.ficon-burst .b { transform-box: view-box; transform-origin: 8px 8px; }
 .ficon-circle-alert .a { transform-box: view-box; transform-origin: 8px 8px; }
 .ficon-clock .a { transform-box: view-box; transform-origin: 8px 8px; }
 .ficon-compass .a { transform-box: view-box; transform-origin: 8px 8px; }
@@ -95,6 +97,8 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-briefcase:not([class*='animate-']) .a, .ficon-briefcase.ficon-play .a { animation: ficon-briefcase-swing 300ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-briefcase-business:not([class*='animate-']) .a, .ficon-briefcase-business.ficon-play .a { stroke-dasharray: 1; animation: ficon-briefcase-business-draw 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-bug:not([class*='animate-']) .a, .ficon-bug.ficon-play .a { animation: ficon-bug-scuttle 260ms ease-in-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-burst:not([class*='animate-']) .a, .ficon-burst.ficon-play .a { animation: ficon-burst-burst 240ms ease-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-burst:not([class*='animate-']) .b, .ficon-burst.ficon-play .b { animation: ficon-burst-spark 240ms ease-out 50ms; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-calendar-days:not([class*='animate-']) .a, .ficon-calendar-days.ficon-play .a { animation: ficon-calendar-days-fill 200ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-calendar-days:not([class*='animate-']) .b, .ficon-calendar-days.ficon-play .b { animation: ficon-calendar-days-fill 200ms ease-out 80ms; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-check:not([class*='animate-']) .a, .ficon-check.ficon-play .a { stroke-dasharray: 1; animation: ficon-check-draw 260ms ease-out; }
@@ -380,6 +384,8 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
 @keyframes ficon-briefcase-swing { 30% { rotate: 6deg; } 70% { rotate: -4deg; } }
 @keyframes ficon-briefcase-business-draw { from { stroke-dashoffset: 1; } }
 @keyframes ficon-bug-scuttle { 25% { translate: 0 -0.75px; } 75% { translate: 0 0.75px; } }
+@keyframes ficon-burst-burst { 50% { scale: 1.12; } }
+@keyframes ficon-burst-spark { 50% { scale: 1.12; opacity: 0.6; } }
 @keyframes ficon-calendar-days-fill { from { opacity: 0.3; scale: 0.85; } }
 @keyframes ficon-check-draw { from { stroke-dashoffset: 1; } }
 @keyframes ficon-chevron-down-nudge { 50% { translate: 0px 1.5px; } }

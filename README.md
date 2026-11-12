@@ -1,10 +1,10 @@
 # ficon
 
-207 icons drawn for 16px, each with its own hover animation. Plain SVG and CSS — no JavaScript, no runtime.
+208 icons drawn for 16px, each with its own hover animation. Plain SVG and CSS — no JavaScript, no runtime.
 
 **[Browse the icons and docs → fabricio3g.github.io/ficon](https://fabricio3g.github.io/ficon/)**
 
-![All 207 icons at 48, 16 and 14 pixels](docs/preview.png)
+![All 208 icons at 48, 16 and 14 pixels](docs/preview.png)
 
 ## Why another icon set
 
@@ -68,6 +68,32 @@ Copy the markup of an icon from [`icons/`](icons) (leave out its `<style>` block
 
 The icon takes its colour from `currentColor` and animates when a parent `button`, `a`, `label`, `summary`, or an element with `role="menuitem" | "tab" | "option"` is hovered. Without the stylesheet the icon is simply static.
 
+### Vue 3
+
+```vue
+<script setup lang="ts">
+import { Trash2, Check } from 'ficon/vue'
+</script>
+
+<template>
+  <button><Trash2 :size="16" /> Delete</button>
+  <Check class="size-4" weight="slim" />
+</template>
+```
+
+The same props as Svelte below. `class`, `style`, listeners and any other attribute land on the `<svg>`. Importing `ficon/vue` brings the stylesheet with it, and a bundler keeps only the icons you import. A component that takes an icon can type it as `Icon` from `ficon/vue`.
+
+### React
+
+```tsx
+import { Trash2, Check } from 'ficon/react'
+
+<button><Trash2 size={16} /> Delete</button>
+<Check className="size-4" weight="slim" />
+```
+
+The same props, with `className` in place of `class`. Any other prop and a `ref` reach the `<svg>`. Works with React 18 and 19; importing `ficon/react` brings the stylesheet with it.
+
 ### Svelte 5
 
 ```svelte
@@ -120,6 +146,7 @@ An icon is one file. The shapes come first; the `<style>` block at the end is it
 |---|---|
 | `dist/ficon.css` | every animation, hover-triggered and reduced-motion aware |
 | `svelte/` | one component per icon and an `index.ts` barrel |
+| `vue/`, `react/` | `index.js` with one component per icon, and its `index.d.ts` |
 | `index.html` | the site (icons and docs), filled in from `scripts/site.html` |
 
 ```bash

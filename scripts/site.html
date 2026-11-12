@@ -217,7 +217,7 @@
       <p class="sub rise">Plain SVG and one stylesheet. No JavaScript, no runtime.</p>
       <div class="docs">
         <nav class="toc" aria-label="Docs">
-          <a href="#install">Install</a><a href="#html">Plain HTML</a><a href="#svelte">Svelte 5</a><a href="#weights">Weights</a><a href="#motion">Motion</a><a href="#play">Play from code</a><a href="#anatomy">Anatomy of an icon</a><a href="#rules">Drawing rules</a>
+          <a href="#install">Install</a><a href="#html">Plain HTML</a><a href="#vue">Vue 3</a><a href="#react">React</a><a href="#svelte">Svelte 5</a><a href="#weights">Weights</a><a href="#motion">Motion</a><a href="#play">Play from code</a><a href="#anatomy">Anatomy of an icon</a><a href="#rules">Drawing rules</a>
         </nav>
         <article>
           <h3 id="install">Install</h3>
@@ -237,6 +237,24 @@
   &lt;/svg&gt;
   Delete
 &lt;/button&gt;</code></pre></div>
+
+          <h3 id="vue">Vue 3</h3>
+          <div class="code"><pre><code>&lt;script setup lang="ts"&gt;
+import { Trash2, Check } from 'ficon/vue'
+&lt;/script&gt;
+
+&lt;template&gt;
+  &lt;button&gt;&lt;Trash2 :size="16" /&gt; Delete&lt;/button&gt;
+  &lt;Check class="size-4" weight="slim" /&gt;
+&lt;/template&gt;</code></pre></div>
+          <p>The same props as Svelte, below. Importing <code>ficon/vue</code> brings the stylesheet with it; a bundler keeps only the icons you import.</p>
+
+          <h3 id="react">React</h3>
+          <div class="code"><pre><code>import { Trash2, Check } from 'ficon/react'
+
+&lt;button&gt;&lt;Trash2 size={16} /&gt; Delete&lt;/button&gt;
+&lt;Check className="size-4" weight="slim" /&gt;</code></pre></div>
+          <p>The same props, with <code>className</code> in place of <code>class</code>; a <code>ref</code> reaches the <code>&lt;svg&gt;</code>. React 18 and 19.</p>
 
           <h3 id="svelte">Svelte 5</h3>
           <div class="code"><pre><code>&lt;script lang="ts"&gt;

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ficon — icons drawn for 16px, each with its own motion</title>
-<meta name="description" content="207 icons drawn on a 16px grid, each with its own hover animation. Plain SVG and CSS, two weights, MIT.">
+<meta name="description" content="208 icons drawn on a 16px grid, each with its own hover animation. Plain SVG and CSS, two weights, MIT.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='4' fill='%23e76d1f'/%3E%3Cpath d='M5.5 12V6.5A2.5 2.5 0 0 1 8 4h2.5M4 8.5h5' fill='none' stroke='%23fff4e6' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E">
 <style>
   :root {
@@ -177,6 +177,8 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
 .ficon-brain .a { transform-origin: 100% 50%; }
 .ficon-brain .b { transform-origin: 0% 50%; }
 .ficon-briefcase .a { transform-box: view-box; transform-origin: 8px 2.5px; }
+.ficon-burst .a { transform-box: view-box; transform-origin: 8px 8px; }
+.ficon-burst .b { transform-box: view-box; transform-origin: 8px 8px; }
 .ficon-circle-alert .a { transform-box: view-box; transform-origin: 8px 8px; }
 .ficon-clock .a { transform-box: view-box; transform-origin: 8px 8px; }
 .ficon-compass .a { transform-box: view-box; transform-origin: 8px 8px; }
@@ -252,6 +254,8 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-briefcase:not([class*='animate-']) .a, .ficon-briefcase.ficon-play .a { animation: ficon-briefcase-swing 300ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-briefcase-business:not([class*='animate-']) .a, .ficon-briefcase-business.ficon-play .a { stroke-dasharray: 1; animation: ficon-briefcase-business-draw 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-bug:not([class*='animate-']) .a, .ficon-bug.ficon-play .a { animation: ficon-bug-scuttle 260ms ease-in-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-burst:not([class*='animate-']) .a, .ficon-burst.ficon-play .a { animation: ficon-burst-burst 240ms ease-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-burst:not([class*='animate-']) .b, .ficon-burst.ficon-play .b { animation: ficon-burst-spark 240ms ease-out 50ms; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-calendar-days:not([class*='animate-']) .a, .ficon-calendar-days.ficon-play .a { animation: ficon-calendar-days-fill 200ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-calendar-days:not([class*='animate-']) .b, .ficon-calendar-days.ficon-play .b { animation: ficon-calendar-days-fill 200ms ease-out 80ms; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-check:not([class*='animate-']) .a, .ficon-check.ficon-play .a { stroke-dasharray: 1; animation: ficon-check-draw 260ms ease-out; }
@@ -537,6 +541,8 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
 @keyframes ficon-briefcase-swing { 30% { rotate: 6deg; } 70% { rotate: -4deg; } }
 @keyframes ficon-briefcase-business-draw { from { stroke-dashoffset: 1; } }
 @keyframes ficon-bug-scuttle { 25% { translate: 0 -0.75px; } 75% { translate: 0 0.75px; } }
+@keyframes ficon-burst-burst { 50% { scale: 1.12; } }
+@keyframes ficon-burst-spark { 50% { scale: 1.12; opacity: 0.6; } }
 @keyframes ficon-calendar-days-fill { from { opacity: 0.3; scale: 0.85; } }
 @keyframes ficon-check-draw { from { stroke-dashoffset: 1; } }
 @keyframes ficon-chevron-down-nudge { 50% { translate: 0px 1.5px; } }
@@ -781,7 +787,7 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
   <div class="wrap hero">
     <canvas id="field" aria-hidden="true"></canvas>
     <div class="glow" aria-hidden="true"></div>
-    <span class="eyebrow rise"><i></i>207 icons · 2 weights · MIT</span>
+    <span class="eyebrow rise"><i></i>208 icons · 2 weights · MIT</span>
     <h1 class="rise" style="--d:40ms">Icons drawn for <em>16 pixels</em>, each with its own motion.</h1>
     <p class="lede rise" style="--d:80ms">Most sets are drawn at 24 and scaled down until the gaps close. ficon is drawn on the grid it renders at — bold strokes, few of them, and a small animation per icon that says what it does.</p>
     <div class="cta rise" style="--d:120ms">
@@ -799,8 +805,8 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
       <p class="sub rise">Hover one to see it move. Click to copy its SVG.</p>
       <div class="tools rise">
         <svg class="ficon ficon-search" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3 3"/></svg>
-        <input id="q" type="search" placeholder="Search 207 icons" autocomplete="off" spellcheck="false" aria-label="Search icons">
-        <span class="count" id="count">207</span>
+        <input id="q" type="search" placeholder="Search 208 icons" autocomplete="off" spellcheck="false" aria-label="Search icons">
+        <span class="count" id="count">208</span>
         <div class="seg" role="group" aria-label="Weight">
           <button data-weight="regular" aria-pressed="true">Regular</button>
           <button data-weight="slim" aria-pressed="false">Slim</button>
@@ -835,6 +841,7 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
         <button class="tile" data-name="briefcase" aria-label="Copy briefcase"><svg class="ficon ficon-briefcase" width="24" height="24" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="a" x="2" y="5.5" width="12" height="8.5" rx="1.5"/><path class="a" d="M6 5.5V4a1.5 1.5 0 0 1 1.5-1.5h1A1.5 1.5 0 0 1 10 4v1.5"/></svg><span>briefcase</span></button>
         <button class="tile" data-name="briefcase-business" aria-label="Copy briefcase-business"><svg class="ficon ficon-briefcase-business" width="24" height="24" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5.5" width="12" height="8.5" rx="1.5"/><path d="M6 5.5V4a1.5 1.5 0 0 1 1.5-1.5h1A1.5 1.5 0 0 1 10 4v1.5"/><path class="a" pathLength="1" d="M2 9.5h12"/></svg><span>briefcase-business</span></button>
         <button class="tile" data-name="bug" aria-label="Copy bug"><svg class="ficon ficon-bug" width="24" height="24" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="5.5" width="6" height="8" rx="3"/><path d="M6 5.5a2 2 0 0 1 4 0"/><path class="a" d="M5 9.5H2.5M11 9.5h2.5M5 7 3 5.5M11 7l2-1.5M5 12l-2 1.5M11 12l2 1.5"/></svg><span>bug</span></button>
+        <button class="tile" data-name="burst" aria-label="Copy burst"><svg class="ficon ficon-burst" width="24" height="24" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="a" d="M8 2v2M8 12v2M2 8h2M12 8h2"/><path class="b" d="M3.75 3.75l1.5 1.5M10.75 10.75l1.5 1.5M3.75 12.25l1.5-1.5M10.75 5.25l1.5-1.5"/></svg><span>burst</span></button>
         <button class="tile" data-name="calendar-days" aria-label="Copy calendar-days"><svg class="ficon ficon-calendar-days" width="24" height="24" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="3.5" width="11" height="10.5" rx="1.5"/><path d="M5.5 2v3M10.5 2v3M2.5 6.5h11"/><circle class="a" cx="5.5" cy="9" r=".85" fill="currentColor" stroke="none"/><circle class="a" cx="8" cy="9" r=".85" fill="currentColor" stroke="none"/><circle class="a" cx="10.5" cy="9" r=".85" fill="currentColor" stroke="none"/><circle class="b" cx="5.5" cy="11.5" r=".85" fill="currentColor" stroke="none"/><circle class="b" cx="8" cy="11.5" r=".85" fill="currentColor" stroke="none"/><circle class="b" cx="10.5" cy="11.5" r=".85" fill="currentColor" stroke="none"/></svg><span>calendar-days</span></button>
         <button class="tile" data-name="check" aria-label="Copy check"><svg class="ficon ficon-check" width="24" height="24" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="a" pathLength="1" d="M3.5 8.5l3 3 6-6.5"/></svg><span>check</span></button>
         <button class="tile" data-name="chevron-down" aria-label="Copy chevron-down"><svg class="ficon ficon-chevron-down" width="24" height="24" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 6.5 8 10l3.5-3.5"/></svg><span>chevron-down</span></button>
@@ -1025,7 +1032,7 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
       <p class="sub rise">Plain SVG and one stylesheet. No JavaScript, no runtime.</p>
       <div class="docs">
         <nav class="toc" aria-label="Docs">
-          <a href="#install">Install</a><a href="#html">Plain HTML</a><a href="#svelte">Svelte 5</a><a href="#weights">Weights</a><a href="#motion">Motion</a><a href="#play">Play from code</a><a href="#anatomy">Anatomy of an icon</a><a href="#rules">Drawing rules</a>
+          <a href="#install">Install</a><a href="#html">Plain HTML</a><a href="#vue">Vue 3</a><a href="#react">React</a><a href="#svelte">Svelte 5</a><a href="#weights">Weights</a><a href="#motion">Motion</a><a href="#play">Play from code</a><a href="#anatomy">Anatomy of an icon</a><a href="#rules">Drawing rules</a>
         </nav>
         <article>
           <h3 id="install">Install</h3>
@@ -1045,6 +1052,24 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
   &lt;/svg&gt;
   Delete
 &lt;/button&gt;</code></pre></div>
+
+          <h3 id="vue">Vue 3</h3>
+          <div class="code"><pre><code>&lt;script setup lang="ts"&gt;
+import { Trash2, Check } from 'ficon/vue'
+&lt;/script&gt;
+
+&lt;template&gt;
+  &lt;button&gt;&lt;Trash2 :size="16" /&gt; Delete&lt;/button&gt;
+  &lt;Check class="size-4" weight="slim" /&gt;
+&lt;/template&gt;</code></pre></div>
+          <p>The same props as Svelte, below. Importing <code>ficon/vue</code> brings the stylesheet with it; a bundler keeps only the icons you import.</p>
+
+          <h3 id="react">React</h3>
+          <div class="code"><pre><code>import { Trash2, Check } from 'ficon/react'
+
+&lt;button&gt;&lt;Trash2 size={16} /&gt; Delete&lt;/button&gt;
+&lt;Check className="size-4" weight="slim" /&gt;</code></pre></div>
+          <p>The same props, with <code>className</code> in place of <code>class</code>; a <code>ref</code> reaches the <code>&lt;svg&gt;</code>. React 18 and 19.</p>
 
           <h3 id="svelte">Svelte 5</h3>
           <div class="code"><pre><code>&lt;script lang="ts"&gt;

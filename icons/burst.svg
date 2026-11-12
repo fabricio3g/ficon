@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path class="a" d="M8 2v2M8 12v2M2 8h2M12 8h2"/>
+  <path class="b" d="M3.75 3.75l1.5 1.5M10.75 10.75l1.5 1.5M3.75 12.25l1.5-1.5M10.75 5.25l1.5-1.5"/>
+  <style>
+    .a { transform-box: view-box; transform-origin: 8px 8px; animation: burst 240ms ease-out; }
+    .b { transform-box: view-box; transform-origin: 8px 8px; animation: spark 240ms ease-out 50ms; }
+    @keyframes burst { 50% { scale: 1.12; } }
+    @keyframes spark { 50% { scale: 1.12; opacity: 0.6; } }
+  </style>
+</svg>
