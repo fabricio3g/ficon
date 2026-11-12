@@ -7,7 +7,8 @@
   let {
     glyph,
     size = 24,
-    strokeWidth = 1.5,
+    weight,
+    strokeWidth,
     color = 'currentColor',
     class: className = '',
     children,
@@ -22,10 +23,11 @@
   viewBox="0 0 16 16"
   fill="none"
   stroke={color}
-  stroke-width={strokeWidth}
+  stroke-width="1.5"
   stroke-linecap="round"
   stroke-linejoin="round"
   aria-hidden={rest['aria-label'] || rest['aria-labelledby'] ? undefined : 'true'}
   {...rest}
-  class={['ficon', `ficon-${glyph}`, className]}
+  class={['ficon', `ficon-${glyph}`, weight && `ficon-${weight}`, className]}
+  style:--ficon-stroke={strokeWidth}
 >{@render children()}</svg>

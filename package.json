@@ -1,6 +1,6 @@
 {
   "name": "ficon",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "207 icons drawn for 16px, each with its own hover animation. Plain SVG and CSS.",
   "license": "MIT",
   "type": "module",

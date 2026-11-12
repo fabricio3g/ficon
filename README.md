@@ -10,10 +10,24 @@ Most icon sets are drawn on a 24px grid and scaled down. At the 14–16px sizes 
 
 ficon is drawn on the grid it renders at:
 
-- **16 × 16 grid, one 1.5 stroke, round ends.** Bold enough to read at 14px.
+- **16 × 16 grid, one stroke weight, round ends.** Regular is 1.5, bold enough to read at 14px; slim is 1.
 - **One idea per icon.** Two to four strokes, rarely six. A detail that cannot keep 1.5px of clear air from its neighbour is dropped, not squeezed in.
 - **Optical sizing.** Icons weigh the same; they do not measure the same. A square is drawn smaller than a circle so the two look equal.
 - **Families share a skeleton.** Every `file-*` is the same page with one mark in it, every `folder-*` the same folder, every `circle-*` the same ring.
+
+## Two weights
+
+The same drawings come in **regular** (1.5 stroke) and **slim** (1 stroke, with smaller dots). Slim is a class, not a second set of files, so switching costs nothing:
+
+![The set at the slim weight](docs/preview-slim.png)
+
+```html
+<html class="ficon-slim">            <!-- everything slim -->
+<nav class="ficon-regular">…</nav>   <!-- except in here -->
+<svg class="ficon ficon-check ficon-slim" …>   <!-- or one icon -->
+```
+
+For any other weight set `--ficon-stroke` (for example `--ficon-stroke: 1.25`) on the icon or an ancestor. The weight classes need `dist/ficon.css` loaded.
 
 ## Every icon moves its own way
 
@@ -58,13 +72,14 @@ The icon takes its colour from `currentColor` and animates when a parent `button
 </script>
 
 <button><Trash2 size={16} /> Delete</button>
-<Check class="size-4" strokeWidth={1.75} />
+<Check class="size-4" weight="slim" />
 ```
 
 | Prop | Default | |
 |---|---|---|
 | `size` | `24` | width and height in px; a sizing class wins over it |
-| `strokeWidth` | `1.5` | on the 16px grid |
+| `weight` | inherited | `regular` (1.5) or `slim` (1); unset, it follows the nearest `.ficon-slim` / `.ficon-regular` ancestor |
+| `strokeWidth` | | an exact weight on the 16px grid; wins over `weight` |
 | `color` | `currentColor` | |
 | `class` | | added after `ficon ficon-<name>` |
 
