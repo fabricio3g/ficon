@@ -44,7 +44,8 @@ const ELEMENTS = {
 const SHARED_ATTRS = ['class', 'pathLength', 'fill', 'stroke'];
 const KEYFRAME_PROPS = new Set(['translate', 'rotate', 'scale', 'opacity', 'stroke-dashoffset']);
 const RULE_PROPS = new Set(['animation', 'transform-origin', 'transform-box', 'stroke-dasharray']);
-const HOVER = ":is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover";
+/** What plays an icon: hovering the control it sits in, or `ficon-play` on it or above it. */
+const HOVER = ":is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play)";
 
 const pascal = (kebab) => kebab.replace(/(^|-)([a-z0-9])/g, (_, __, c) => c.toUpperCase());
 
@@ -248,7 +249,7 @@ function scopedCss(icon) {
     });
     const text = (decls) => decls.map((d) => `${d.prop}: ${d.value};`).join(' ');
     if (pivot.length) still.push(`${scope}${target} { ${text(pivot)} }`);
-    moving.push(`  ${HOVER} ${scope}:not([class*='animate-'])${target} { ${text(play)} }`);
+    moving.push(`  ${HOVER} ${scope}:not([class*='animate-'])${target}, ${scope}.ficon-play${target} { ${text(play)} }`);
   }
   const keyframes = icon.style.keyframes.map((k) =>
     `@keyframes ${rename(k.name)} { ${k.stops.map((s) => `${s.at} { ${s.decls.map((d) => `${d.prop}: ${d.value};`).join(' ')} }`).join(' ')} }`);
@@ -309,25 +310,18 @@ ${lines.sort((a, b) => a.localeCompare(b)).join('\n')}
 }
 
 function sheetSource(icons, css) {
-  const cell = (icon, size) =>
-    `<svg class="ficon ficon-${icon.name}" width="${size}" height="${size}" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${icon.body}</svg>`;
-  return `<!doctype html><meta charset="utf-8"><title>ficon</title>
-<style>
-  body { margin: 16px; font: 11px/1.3 system-ui, sans-serif; color: #1b1b1f; background: #fff; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 6px; }
-  button { all: unset; cursor: pointer; display: grid; grid-template-columns: 16px 40px; gap: 10px; align-items: center; padding: 8px; border-radius: 8px; border: 1px solid #0001; }
-  button:hover { background: #0000000a; }
-  span { grid-column: 1 / -1; color: #555; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .warn { border-color: #d9770688; }
-  .bar { margin: 0 0 12px; font-size: 13px; }
-  .bar label { cursor: pointer; }
-${css}
-</style>
-<p class="bar"><label><input type="checkbox" onchange="document.body.classList.toggle('ficon-slim', this.checked)"> Slim</label> · ${icons.length} icons · hover one</p>
-<div class="grid">
-${icons.map((i) => `<button class="${i.warnings.length ? 'warn' : ''}" title="${i.warnings.join(' · ')}">${cell(i, 16)}${cell(i, 40)}<span>${i.name}</span></button>`).join('\n')}
-</div>
-`;
+  const byName = new Map(icons.map((i) => [i.name, i]));
+  const svg = (icon, size) =>
+    `<svg class="ficon ficon-${icon.name}" width="${size}" height="${size}" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icon.body}</svg>`;
+  const tiles = icons.map((i) => `        <button class="tile" data-name="${i.name}" aria-label="Copy ${i.name}">${svg(i, 24)}<span>${i.name}</span></button>`).join('\n');
+  return readFileSync(join(root, 'scripts/site.html'), 'utf8')
+    .replace(/\{\{I:([\w-]+)\}\}/g, (_, name) => {
+      if (!byName.has(name)) throw new Error(`site.html uses an icon that does not exist: ${name}`);
+      return svg(byName.get(name), 16);
+    })
+    .replaceAll('{{COUNT}}', String(icons.length))
+    .replace('{{ICONS}}', () => tiles)
+    .replace('{{CSS}}', () => css);
 }
 
 // ── Main ─────────────────────────────────────────────────────────────────

@@ -2,6 +2,8 @@
 
 207 icons drawn for 16px, each with its own hover animation. Plain SVG and CSS — no JavaScript, no runtime.
 
+**[Browse the icons and docs → fabricio3g.github.io/ficon](https://fabricio3g.github.io/ficon/)**
+
 ![All 207 icons at 48, 16 and 14 pixels](docs/preview.png)
 
 ## Why another icon set
@@ -40,7 +42,9 @@ The motion is small and quick on purpose:
 - only `translate`, `rotate`, `scale`, `opacity` and stroke draw-on, so it stays on the compositor
 - switched off entirely under `prefers-reduced-motion`
 
-Open [`index.html`](index.html) in a browser and hover the tiles to see all of them.
+To play an icon from code instead of on hover, put the class `ficon-play` on it or on any ancestor.
+
+See all of them on [the site](https://fabricio3g.github.io/ficon/), or open `index.html` locally.
 
 ## Use it
 
@@ -116,7 +120,7 @@ An icon is one file. The shapes come first; the `<style>` block at the end is it
 |---|---|
 | `dist/ficon.css` | every animation, hover-triggered and reduced-motion aware |
 | `svelte/` | one component per icon and an `index.ts` barrel |
-| `index.html` | the demo page |
+| `index.html` | the site (icons and docs), filled in from `scripts/site.html` |
 
 ```bash
 npm run build   # lint, then write the outputs

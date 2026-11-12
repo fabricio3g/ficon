@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ficon — icons drawn for 16px, each with its own motion</title>
+<meta name="description" content="{{COUNT}} icons drawn on a 16px grid, each with its own hover animation. Plain SVG and CSS, two weights, MIT.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='4' fill='%23e76d1f'/%3E%3Cpath d='M5.5 12V6.5A2.5 2.5 0 0 1 8 4h2.5M4 8.5h5' fill='none' stroke='%23fff4e6' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #fbfaf8; --fg: #1a1208; --fg-2: #5b554c; --fg-3: #8a847a;
+    --card: #ffffff; --ring: rgb(26 18 8 / 0.08); --ring-2: rgb(26 18 8 / 0.16);
+    --wash: rgb(26 18 8 / 0.04); --wash-2: rgb(26 18 8 / 0.07);
+    --ember: #e76d1f; --ember-2: #b34a0e; --ember-soft: rgb(231 109 31 / 0.12);
+    --glass: rgb(251 250 248 / 0.72); --code: #f4f2ee;
+    --tile: 26 18 8;
+    --ease: cubic-bezier(0.4, 0, 0.2, 1); --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --sans: "Inter Variable", Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SF Mono", "Cascadia Code", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141312; --fg: #f4efe7; --fg-2: #b5aea3; --fg-3: #7d776e;
+      --card: #1d1c1a; --ring: rgb(255 244 230 / 0.09); --ring-2: rgb(255 244 230 / 0.18);
+      --wash: rgb(255 244 230 / 0.05); --wash-2: rgb(255 244 230 / 0.09);
+      --ember: #f08a43; --ember-2: #f5a468; --ember-soft: rgb(240 138 67 / 0.14);
+      --glass: rgb(20 19 18 / 0.66); --code: #1b1a18;
+      --tile: 255 244 230;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #141312; --fg: #f4efe7; --fg-2: #b5aea3; --fg-3: #7d776e;
+    --card: #1d1c1a; --ring: rgb(255 244 230 / 0.09); --ring-2: rgb(255 244 230 / 0.18);
+    --wash: rgb(255 244 230 / 0.05); --wash-2: rgb(255 244 230 / 0.09);
+    --ember: #f08a43; --ember-2: #f5a468; --ember-soft: rgb(240 138 67 / 0.14);
+    --glass: rgb(20 19 18 / 0.66); --code: #1b1a18;
+    --tile: 255 244 230;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.55 var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  a { color: inherit; }
+  button { font: inherit; color: inherit; }
+  :focus-visible { outline: 2px solid var(--ember); outline-offset: 2px; border-radius: 6px; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+  /* ── Top bar: glass over the page ── */
+  .top { position: sticky; top: 0; z-index: 20; background: var(--glass); backdrop-filter: blur(14px) saturate(1.4); -webkit-backdrop-filter: blur(14px) saturate(1.4); border-bottom: 1px solid transparent; transition: border-color 200ms var(--ease); }
+  .top.stuck { border-bottom-color: var(--ring); }
+  .top .wrap { display: flex; align-items: center; gap: 4px; height: 56px; }
+  .brand { display: flex; align-items: center; gap: 9px; font-weight: 650; letter-spacing: -0.01em; text-decoration: none; margin-right: auto; }
+  .mark { width: 22px; height: 22px; border-radius: 6px; background: var(--ember); color: #fff4e6; display: grid; place-items: center; }
+  .nav { display: flex; align-items: center; gap: 2px; }
+  .nav a, .nav button { all: unset; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 11px; border-radius: 999px; color: var(--fg-2); font-size: 13.5px; transition: background-color 90ms var(--ease), color 90ms var(--ease); }
+  .nav a:hover, .nav button:hover { background: var(--wash-2); color: var(--fg); }
+  .nav .icon-only { padding: 0; width: 32px; justify-content: center; }
+  @media (max-width: 560px) { .nav .hide-sm { display: none; } }
+
+  /* ── Hero ── */
+  .hero { position: relative; padding: 76px 20px 40px; text-align: left; isolation: isolate; }
+  #field { position: absolute; inset: -56px 0 auto 0; width: 100%; height: 520px; z-index: -2; pointer-events: none;
+    -webkit-mask-image: linear-gradient(to bottom, #000 30%, transparent 96%); mask-image: linear-gradient(to bottom, #000 30%, transparent 96%); }
+  .glow { position: absolute; z-index: -1; pointer-events: none; width: 520px; height: 320px; left: 50%; top: -60px; translate: -8% 0; border-radius: 50%;
+    background: radial-gradient(closest-side, var(--ember-soft), transparent); filter: blur(46px); animation: drift 14s ease-in-out infinite alternate; }
+  @keyframes drift { to { translate: -24% 18px; scale: 1.08; } }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; height: 28px; padding: 0 12px 0 10px; border-radius: 999px; background: var(--glass); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: inset 0 0 0 1px var(--ring); color: var(--fg-2); font-size: 12.5px; }
+  .eyebrow i { width: 6px; height: 6px; border-radius: 50%; background: var(--ember); }
+  h1 { margin: 20px 0 14px; font-size: clamp(34px, 6vw, 56px); line-height: 1.04; letter-spacing: -0.035em; font-weight: 680; max-width: 15ch; text-wrap: balance; }
+  h1 em { font-style: normal; color: var(--ember); }
+  .lede { margin: 0; max-width: 54ch; color: var(--fg-2); font-size: 17px; text-wrap: pretty; }
+  .cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; align-items: center; }
+  .pill { all: unset; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; height: 44px; padding: 0 8px 0 18px; border-radius: 1.75rem; background: var(--card); box-shadow: inset 0 0 0 1px var(--ring), 0 1px 2px rgb(0 0 0 / 0.04); font: 13.5px var(--mono); color: var(--fg); transition: box-shadow 150ms var(--ease); }
+  .pill:hover { box-shadow: inset 0 0 0 1px var(--ring-2), 0 8px 20px -10px rgb(0 0 0 / 0.2); }
+  .pill .go { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--wash-2); color: var(--fg-2); transition: background-color 150ms var(--ease), color 150ms var(--ease); }
+  .pill:hover .go { background: var(--ember); color: #fff4e6; }
+  .ghost { display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 16px; border-radius: 1.75rem; text-decoration: none; color: var(--fg-2); font-size: 14px; transition: background-color 90ms var(--ease), color 90ms var(--ease); }
+  .ghost:hover { background: var(--wash-2); color: var(--fg); }
+  .parade { display: flex; gap: 6px; margin-top: 44px; flex-wrap: wrap; }
+  .parade span { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--glass); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); box-shadow: inset 0 0 0 1px var(--ring); color: var(--fg); transition: color 280ms var(--ease), box-shadow 280ms var(--ease); }
+  .parade span.ficon-play { color: var(--ember); box-shadow: inset 0 0 0 1px var(--ember-soft); }
+
+  /* ── Section heads ── */
+  section { padding: 44px 0; }
+  h2 { margin: 0 0 6px; font-size: 22px; letter-spacing: -0.02em; font-weight: 640; }
+  .sub { margin: 0 0 22px; color: var(--fg-2); max-width: 60ch; }
+
+  /* ── Tool row: the composer pill ── */
+  .tools { position: sticky; top: 64px; z-index: 10; display: flex; gap: 8px; align-items: center; padding: 6px 6px 6px 16px; margin-bottom: 18px; border-radius: 1.75rem; background: var(--glass); backdrop-filter: blur(14px) saturate(1.4); -webkit-backdrop-filter: blur(14px) saturate(1.4); box-shadow: inset 0 0 0 1px var(--ring), 0 1px 2px rgb(0 0 0 / 0.04); transition: box-shadow 150ms var(--ease); }
+  .tools:focus-within { box-shadow: inset 0 0 0 1px var(--ring-2), 0 8px 20px -10px rgb(0 0 0 / 0.22); }
+  .tools > svg { color: var(--fg-3); flex: none; }
+  .tools input { all: unset; flex: 1; min-width: 0; height: 32px; font-size: 15px; }
+  .tools input::placeholder { color: var(--fg-3); }
+  .count { color: var(--fg-3); font-size: 12.5px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .seg { display: flex; padding: 2px; border-radius: 999px; background: var(--wash); }
+  .seg button { all: unset; cursor: pointer; height: 28px; padding: 0 12px; border-radius: 999px; font-size: 12.5px; color: var(--fg-2); transition: background-color 150ms var(--ease), color 150ms var(--ease); }
+  .seg button[aria-pressed="true"] { background: var(--card); color: var(--fg); box-shadow: 0 0 0 1px var(--ring), 0 1px 2px rgb(0 0 0 / 0.06); }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 8px; }
+  .tile { all: unset; cursor: pointer; display: grid; justify-items: center; gap: 12px; padding: 20px 6px 12px; border-radius: 14px; box-shadow: inset 0 0 0 1px var(--ring); background: var(--card); transition: box-shadow 150ms var(--ease), translate 150ms var(--ease-out), background-color 90ms var(--ease); }
+  .tile:hover { box-shadow: inset 0 0 0 1px var(--ring-2), 0 10px 22px -14px rgb(0 0 0 / 0.3); translate: 0 -1px; }
+  .tile:active { translate: 0 0; }
+  .tile svg { width: 24px; height: 24px; }
+  .tile span { font-size: 11.5px; color: var(--fg-3); max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 0 4px; transition: color 90ms var(--ease); }
+  .tile:hover span { color: var(--fg-2); }
+  .tile[hidden] { display: none; }
+  .empty { padding: 48px 0; text-align: center; color: var(--fg-3); }
+
+  /* ── Docs ── */
+  .docs { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 40px; align-items: start; }
+  .toc { position: sticky; top: 84px; display: grid; gap: 1px; font-size: 13.5px; }
+  .toc a { text-decoration: none; color: var(--fg-3); padding: 5px 10px; border-radius: 8px; border-left: 0; transition: color 90ms var(--ease), background-color 90ms var(--ease); }
+  .toc a:hover { color: var(--fg); background: var(--wash); }
+  .toc a.on { color: var(--fg); background: var(--wash-2); }
+  @media (max-width: 760px) { .docs { grid-template-columns: 1fr; } .toc { display: none; } }
+  article h3 { margin: 38px 0 8px; font-size: 16.5px; letter-spacing: -0.01em; font-weight: 630; }
+  article h3:first-child { margin-top: 0; }
+  article p, article li { color: var(--fg-2); max-width: 66ch; }
+  article ul { padding-left: 18px; margin: 8px 0; }
+  article li { margin: 3px 0; }
+  article strong { color: var(--fg); font-weight: 600; }
+  code { font: 0.9em var(--mono); background: var(--wash-2); padding: 1px 5px; border-radius: 5px; }
+  .code { position: relative; margin: 12px 0 4px; border-radius: 14px; background: var(--code); box-shadow: inset 0 0 0 1px var(--ring); }
+  .code pre { margin: 0; padding: 14px 16px; overflow-x: auto; font: 12.75px/1.6 var(--mono); color: var(--fg); }
+  .code pre code { background: none; padding: 0; font-size: inherit; }
+  .code .copy { all: unset; cursor: pointer; position: absolute; top: 8px; right: 8px; width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; color: var(--fg-3); background: var(--glass); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); opacity: 0; transition: opacity 150ms var(--ease), color 90ms var(--ease); }
+  .code:hover .copy, .code .copy:focus-visible { opacity: 1; }
+  .code .copy:hover { color: var(--fg); }
+  table { border-collapse: collapse; width: 100%; font-size: 13.5px; margin: 12px 0; }
+  th, td { text-align: left; padding: 9px 12px 9px 0; border-bottom: 1px solid var(--ring); vertical-align: top; color: var(--fg-2); }
+  th { color: var(--fg-3); font-weight: 500; font-size: 12.5px; }
+  .weights { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; margin: 14px 0; }
+  .weights > div { padding: 18px; border-radius: 14px; background: var(--card); box-shadow: inset 0 0 0 1px var(--ring); }
+  .weights p { margin: 0 0 12px; font-size: 12.5px; color: var(--fg-3); }
+  .weights .row { display: flex; gap: 14px; color: var(--fg); }
+  .weights svg { width: 22px; height: 22px; }
+
+  footer { padding: 36px 0 56px; color: var(--fg-3); font-size: 13px; border-top: 1px solid var(--ring); margin-top: 28px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  footer a { text-decoration: none; } footer a:hover { color: var(--fg); }
+
+  /* ── Toast: glass ── */
+  .toast { position: fixed; left: 50%; bottom: 26px; z-index: 40; translate: -50% 12px; opacity: 0; pointer-events: none; display: flex; align-items: center; gap: 9px; height: 40px; padding: 0 16px 0 12px; border-radius: 999px; background: var(--glass); backdrop-filter: blur(16px) saturate(1.5); -webkit-backdrop-filter: blur(16px) saturate(1.5); box-shadow: inset 0 0 0 1px var(--ring-2), 0 12px 28px -12px rgb(0 0 0 / 0.35); font-size: 13.5px; transition: opacity 200ms var(--ease), translate 200ms var(--ease-out); }
+  .toast.on { opacity: 1; translate: -50% 0; }
+  .toast svg { color: var(--ember); }
+
+  /* ── Arrival: one quiet rise, once ── */
+  .rise { opacity: 0; translate: 0 10px; filter: blur(4px); transition: opacity 280ms var(--ease-out), translate 280ms var(--ease-out), filter 280ms var(--ease-out); transition-delay: var(--d, 0ms); }
+  .rise.in { opacity: 1; translate: none; filter: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .glow { animation: none; }
+    .rise { opacity: 1; translate: none; filter: none; transition: none; }
+    .tile, .toast { transition: none; }
+  }
+
+{{CSS}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="ficon">
+      <span class="mark"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 13V6.5A2.5 2.5 0 0 1 8 4h2.5M4 8.5h5"/></svg></span>
+      ficon
+    </a>
+    <nav class="nav">
+      <a href="#icons">Icons</a>
+      <a href="#docs">Docs</a>
+      <a class="hide-sm" href="https://github.com/fabricio3g/ficon">GitHub</a>
+      <button class="icon-only" id="theme" aria-label="Switch between light and dark">{{I:sun-medium}}</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <canvas id="field" aria-hidden="true"></canvas>
+    <div class="glow" aria-hidden="true"></div>
+    <span class="eyebrow rise"><i></i>{{COUNT}} icons · 2 weights · MIT</span>
+    <h1 class="rise" style="--d:40ms">Icons drawn for <em>16 pixels</em>, each with its own motion.</h1>
+    <p class="lede rise" style="--d:80ms">Most sets are drawn at 24 and scaled down until the gaps close. ficon is drawn on the grid it renders at — bold strokes, few of them, and a small animation per icon that says what it does.</p>
+    <div class="cta rise" style="--d:120ms">
+      <button class="pill" data-copy="npm i github:fabricio3g/ficon" aria-label="Copy the install command">npm i github:fabricio3g/ficon <span class="go">{{I:copy}}</span></button>
+      <a class="ghost" href="#docs">Read the docs {{I:arrow-right}}</a>
+    </div>
+    <div class="parade rise" style="--d:160ms" aria-hidden="true">
+      <span>{{I:trash-2}}</span><span>{{I:bell}}</span><span>{{I:check}}</span><span>{{I:download}}</span><span>{{I:eye}}</span><span>{{I:settings}}</span><span>{{I:send}}</span><span>{{I:search}}</span><span>{{I:mail}}</span><span>{{I:sparkles}}</span>
+    </div>
+  </div>
+
+  <section id="icons">
+    <div class="wrap">
+      <h2 class="rise">All icons</h2>
+      <p class="sub rise">Hover one to see it move. Click to copy its SVG.</p>
+      <div class="tools rise">
+        {{I:search}}
+        <input id="q" type="search" placeholder="Search {{COUNT}} icons" autocomplete="off" spellcheck="false" aria-label="Search icons">
+        <span class="count" id="count">{{COUNT}}</span>
+        <div class="seg" role="group" aria-label="Weight">
+          <button data-weight="regular" aria-pressed="true">Regular</button>
+          <button data-weight="slim" aria-pressed="false">Slim</button>
+        </div>
+      </div>
+      <div class="grid" id="grid">
+{{ICONS}}
+      </div>
+      <p class="empty" id="empty" hidden>No icon by that name.</p>
+    </div>
+  </section>
+
+  <section id="docs">
+    <div class="wrap">
+      <h2 class="rise">Docs</h2>
+      <p class="sub rise">Plain SVG and one stylesheet. No JavaScript, no runtime.</p>
+      <div class="docs">
+        <nav class="toc" aria-label="Docs">
+          <a href="#install">Install</a><a href="#html">Plain HTML</a><a href="#svelte">Svelte 5</a><a href="#weights">Weights</a><a href="#motion">Motion</a><a href="#play">Play from code</a><a href="#anatomy">Anatomy of an icon</a><a href="#rules">Drawing rules</a>
+        </nav>
+        <article>
+          <h3 id="install">Install</h3>
+          <p>Not on npm yet — install from GitHub, or just copy the files you need out of <code>icons/</code> and <code>dist/ficon.css</code>.</p>
+          <div class="code"><pre><code>npm i github:fabricio3g/ficon</code></pre></div>
+
+          <h3 id="html">Plain HTML</h3>
+          <p>Click any icon above to copy its markup, and load the stylesheet once. The icon takes its colour from <code>currentColor</code> and animates when a parent <code>button</code>, <code>a</code>, <code>label</code>, <code>summary</code> or an element with <code>role="menuitem | tab | option"</code> is hovered. Without the stylesheet it is simply a still icon.</p>
+          <div class="code"><pre><code>&lt;link rel="stylesheet" href="ficon.css"&gt;
+
+&lt;button&gt;
+  &lt;svg class="ficon ficon-trash-2" width="16" height="16" viewBox="0 0 16 16"
+       fill="none" stroke="currentColor" stroke-width="1.5"
+       stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"&gt;
+    &lt;path class="a" d="M2.5 4.5h11M6 4.5V3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v1.5"/&gt;
+    &lt;path d="M4 4.5l.5 8A1.5 1.5 0 0 0 6 14h4a1.5 1.5 0 0 0 1.5-1.5l.5-8"/&gt;
+  &lt;/svg&gt;
+  Delete
+&lt;/button&gt;</code></pre></div>
+
+          <h3 id="svelte">Svelte 5</h3>
+          <div class="code"><pre><code>&lt;script lang="ts"&gt;
+  import { Trash2, Check } from 'ficon';
+&lt;/script&gt;
+
+&lt;button&gt;&lt;Trash2 size={16} /&gt; Delete&lt;/button&gt;
+&lt;Check class="size-4" weight="slim" /&gt;</code></pre></div>
+          <table>
+            <tr><th>Prop</th><th>Default</th><th></th></tr>
+            <tr><td><code>size</code></td><td><code>24</code></td><td>Width and height in px. A sizing class wins over it.</td></tr>
+            <tr><td><code>weight</code></td><td>inherited</td><td><code>regular</code> or <code>slim</code>. Unset, it follows the nearest weight class above it.</td></tr>
+            <tr><td><code>strokeWidth</code></td><td></td><td>An exact weight on the 16px grid; wins over <code>weight</code>.</td></tr>
+            <tr><td><code>color</code></td><td><code>currentColor</code></td><td></td></tr>
+          </table>
+          <p>Names follow Lucide's, so ficon can stand in where those names are already in use. The drawings are ficon's own.</p>
+
+          <h3 id="weights">Weights</h3>
+          <p>The same drawings come in <strong>regular</strong> (1.5 stroke) and <strong>slim</strong> (1 stroke, smaller dots). Slim is a class, not a second set of files.</p>
+          <div class="weights">
+            <div class="ficon-regular"><p>Regular · 1.5</p><div class="row">{{I:folder}}{{I:mic}}{{I:calendar-days}}{{I:message-square-text}}{{I:globe}}</div></div>
+            <div class="ficon-slim"><p>Slim · 1</p><div class="row">{{I:folder}}{{I:mic}}{{I:calendar-days}}{{I:message-square-text}}{{I:globe}}</div></div>
+          </div>
+          <div class="code"><pre><code>&lt;html class="ficon-slim"&gt;            &lt;!-- everything slim --&gt;
+&lt;nav class="ficon-regular"&gt;…&lt;/nav&gt;   &lt;!-- except in here --&gt;
+
+.toolbar { --ficon-stroke: 1.25; }   /* or any weight in between */</code></pre></div>
+
+          <h3 id="motion">Motion</h3>
+          <p>There is no shared wiggle. Each icon carries an animation that says what it does: the trash can lifts its lid, the check draws itself, the bell swings from its top, the download arrow drops into its tray.</p>
+          <ul>
+            <li>Plays <strong>once</strong> per hover of the control it sits in.</li>
+            <li>Never longer than <strong>300ms</strong>, never moves more than <strong>2px</strong>.</li>
+            <li>Only <code>translate</code>, <code>rotate</code>, <code>scale</code>, <code>opacity</code> and stroke draw-on.</li>
+            <li>Off entirely under <code>prefers-reduced-motion</code>.</li>
+          </ul>
+
+          <h3 id="play">Play from code</h3>
+          <p>Hover is the default trigger. To play an icon yourself — on success, on focus, on a timer — put <code>ficon-play</code> on the icon or any ancestor. Remove and re-add the class to play it again.</p>
+          <div class="code"><pre><code>button.classList.remove('ficon-play');
+void button.offsetWidth;            // restart
+button.classList.add('ficon-play');</code></pre></div>
+
+          <h3 id="anatomy">Anatomy of an icon</h3>
+          <p>An icon is one file. The shapes come first; the <code>&lt;style&gt;</code> block at the end is its animation, written against the icon's own parts (<code>.a</code> … <code>.f</code>). The build lints every file, scopes each block to its icon and writes <code>dist/ficon.css</code>.</p>
+          <div class="code"><pre><code>&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none"
+     stroke="currentColor" stroke-width="1.5"
+     stroke-linecap="round" stroke-linejoin="round"&gt;
+  &lt;path class="a" d="M2.5 4.5h11M6 4.5V3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v1.5"/&gt;
+  &lt;path d="M4 4.5l.5 8A1.5 1.5 0 0 0 6 14h4a1.5 1.5 0 0 0 1.5-1.5l.5-8"/&gt;
+  &lt;style&gt;
+    .a { transform-box: view-box; transform-origin: 13.5px 4.5px;
+         animation: lid 280ms ease-out; }
+    @keyframes lid { 45% { rotate: 14deg; translate: 0 -1px; } }
+  &lt;/style&gt;
+&lt;/svg&gt;</code></pre></div>
+
+          <h3 id="rules">Drawing rules</h3>
+          <ul>
+            <li><strong>16 × 16 grid</strong>, stroke centres inside 2 … 14, coordinates on the half pixel.</li>
+            <li><strong>Air</strong>: parallel strokes keep their centres 3 apart. A detail that cannot is dropped, not squeezed in.</li>
+            <li><strong>One idea</strong> per icon: two to four strokes, rarely six.</li>
+            <li><strong>Optical size</strong>: a square is drawn smaller than a circle so the two weigh the same.</li>
+            <li><strong>Families share a skeleton</strong>: every <code>file-*</code> is the same page with one mark in it.</li>
+          </ul>
+          <p>The full rules, and how to add an icon, are in <a href="https://github.com/fabricio3g/ficon/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap"><span>ficon · MIT</span><a href="https://github.com/fabricio3g/ficon">GitHub</a><a href="https://github.com/fabricio3g/ficon/blob/main/CONTRIBUTING.md">Contribute</a><a href="#top">Back to top</a></div></footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite">{{I:check}}<span></span></div>
+
+<script>
+(() => {
+  const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const root = document.documentElement;
+
+  // Theme
+  let saved = null; try { saved = localStorage.getItem('ficon-theme'); } catch {}
+  if (saved) root.dataset.theme = saved;
+  const isDark = () => (root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches);
+  $('#theme').onclick = () => { root.dataset.theme = isDark() ? 'light' : 'dark'; try { localStorage.setItem('ficon-theme', root.dataset.theme); } catch {} };
+
+  // Toast + copy
+  const toast = $('#toast'); let toastTimer;
+  const say = (text) => { toast.lastElementChild.textContent = text; toast.classList.add('on'); replay(toast); clearTimeout(toastTimer); toastTimer = setTimeout(() => toast.classList.remove('on'), 1600); };
+  const copy = async (text, label) => { try { await navigator.clipboard.writeText(text); say(label); } catch { say('Copy failed'); } };
+  function replay(el) { el.classList.remove('ficon-play'); void el.offsetWidth; el.classList.add('ficon-play'); }
+
+  $$('[data-copy]').forEach((b) => (b.onclick = () => copy(b.dataset.copy, 'Copied')));
+  $$('.code').forEach((box) => {
+    const b = document.createElement('button'); b.className = 'copy'; b.setAttribute('aria-label', 'Copy code');
+    b.innerHTML = $('.pill .go').innerHTML; b.onclick = () => copy($('pre', box).innerText, 'Copied');
+    box.append(b);
+  });
+
+  // Icons: weight, search, copy
+  const grid = $('#grid'), tiles = $$('.tile', grid), count = $('#count'), empty = $('#empty');
+  let weight = 'regular';
+  $$('[data-weight]').forEach((b) => (b.onclick = () => {
+    weight = b.dataset.weight;
+    $$('[data-weight]').forEach((o) => o.setAttribute('aria-pressed', String(o === b)));
+    grid.classList.toggle('ficon-slim', weight === 'slim');
+  }));
+  $('#q').oninput = (e) => {
+    const q = e.target.value.trim().toLowerCase().replace(/\s+/g, '-'); let n = 0;
+    for (const t of tiles) { const hit = !q || t.dataset.name.includes(q); t.hidden = !hit; if (hit) n += 1; }
+    count.textContent = n; empty.hidden = n > 0;
+  };
+  addEventListener('keydown', (e) => { if (e.key === '/' && document.activeElement?.tagName !== 'INPUT') { e.preventDefault(); $('#q').focus(); } });
+  grid.onclick = (e) => {
+    const t = e.target.closest('.tile'); if (!t) return;
+    const svg = $('svg', t).cloneNode(true);
+    svg.setAttribute('width', '16'); svg.setAttribute('height', '16'); svg.setAttribute('stroke-width', weight === 'slim' ? '1' : '1.5');
+    if (weight === 'slim') svg.classList.add('ficon-slim');
+    copy(svg.outerHTML, `Copied ${t.dataset.name}`);
+  };
+
+  // Top bar hairline once the page has moved
+  const top = $('.top'); const onScroll = () => top.classList.toggle('stuck', scrollY > 8); addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  // Arrival
+  const rise = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); rise.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+  $$('.rise').forEach((el) => rise.observe(el));
+
+  // Docs: mark the section in view
+  const links = $$('.toc a'); const heads = links.map((a) => $(a.getAttribute('href')));
+  const spy = () => { let on = 0; heads.forEach((h, i) => { if (h.getBoundingClientRect().top < 140) on = i; }); links.forEach((a, i) => a.classList.toggle('on', i === on)); };
+  addEventListener('scroll', spy, { passive: true }); spy();
+
+  if (still) return;
+
+  // The parade: one icon at a time plays its own animation
+  const parade = $$('.parade span'); let turn = 0;
+  setInterval(() => { if (document.hidden) return; parade.forEach((s) => s.classList.remove('ficon-play')); const s = parade[turn++ % parade.length]; void s.offsetWidth; s.classList.add('ficon-play'); }, 1100);
+
+  // The tile field: a quiet dithered mosaic behind the hero
+  const cv = $('#field'), cx = cv.getContext('2d'); const CELL = 16, GAP = 3; let W = 0, H = 0, cols = 0, rows = 0, t0 = performance.now(), last = 0, visible = true;
+  const size = () => { const r = cv.getBoundingClientRect(), d = Math.min(devicePixelRatio || 1, 2); W = r.width; H = r.height; cv.width = W * d; cv.height = H * d; cx.setTransform(d, 0, 0, d, 0, 0); cols = Math.ceil(W / CELL); rows = Math.ceil(H / CELL); };
+  size(); addEventListener('resize', size);
+  new IntersectionObserver(([e]) => (visible = e.isIntersecting)).observe(cv);
+  const hash = (x, y) => { const n = Math.sin(x * 127.1 + y * 311.7) * 43758.5453; return n - Math.floor(n); };
+  const LEVELS = [0, 0.018, 0.034, 0.052, 0.074, 0.1];
+  const draw = (now) => {
+    requestAnimationFrame(draw);
+    if (!visible || document.hidden || now - last < 80) return; last = now;
+    const t = (now - t0) / 1000, rgb = getComputedStyle(root).getPropertyValue('--tile').trim().split(' ').join(',');
+    cx.clearRect(0, 0, W, H);
+    for (let y = 0; y < rows; y += 1) for (let x = 0; x < cols; x += 1) {
+      const u = x / cols, v = y / rows;
+      const swell = Math.sin(u * 5.2 + t * 0.35) * Math.cos(v * 4.1 - t * 0.27);
+      const ring = Math.sin(Math.hypot(u - 0.72, v - 0.2) * 14 - t * 0.6);
+      const light = Math.max(0, 1 - Math.hypot(u - 0.72, (v - 0.12) * 1.3) * 1.5);
+      let a = 0.28 + swell * 0.22 + ring * 0.14 + light * 0.55 + (hash(x, y) - 0.5) * 0.3;
+      a += Math.max(0, Math.sin(t * 0.9 + hash(y, x) * 40) - 0.965) * 9;   // an ember now and then
+      const level = LEVELS[Math.max(0, Math.min(5, Math.round(a * 5)))];
+      if (!level) continue;
+      const warm = light > 0.45 && hash(x + 7, y + 3) > 0.55;
+      cx.fillStyle = warm ? `rgba(231,109,31,${level * 2.2})` : `rgba(${rgb},${level})`;
+      cx.fillRect(x * CELL, y * CELL, CELL - GAP, CELL - GAP);
+    }
+  };
+  requestAnimationFrame(draw);
+})();
+</script>
+</body>
+</html>
