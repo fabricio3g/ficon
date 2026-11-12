@@ -1,10 +1,10 @@
 # ficon
 
-208 icons drawn for 16px, each with its own hover animation. Plain SVG and CSS — no JavaScript, no runtime.
+233 icons drawn for 16px, each with its own hover animation. Plain SVG and CSS — no JavaScript, no runtime.
 
 **[Browse the icons and docs → fabricio3g.github.io/ficon](https://fabricio3g.github.io/ficon/)**
 
-![All 208 icons at 48, 16 and 14 pixels](docs/preview.png)
+![The icons at 48, 16 and 14 pixels](docs/preview.png)
 
 ## Why another icon set
 

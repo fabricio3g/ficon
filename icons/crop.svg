@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M4.5 2v8A1.5 1.5 0 0 0 6 11.5h8"/>
+  <path class="a" d="M11.5 14V6A1.5 1.5 0 0 0 10 4.5H2"/>
+  <style>
+    .a { animation: trim 260ms ease-out; }
+    @keyframes trim { 50% { translate: -1px 1px; } }
+  </style>
+</svg>

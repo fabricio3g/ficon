@@ -23,8 +23,10 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
 .ficon-burst .a { transform-box: view-box; transform-origin: 8px 8px; }
 .ficon-burst .b { transform-box: view-box; transform-origin: 8px 8px; }
 .ficon-circle-alert .a { transform-box: view-box; transform-origin: 8px 8px; }
+.ficon-circle-help .a { transform-box: view-box; transform-origin: 8px 8px; }
 .ficon-clock .a { transform-box: view-box; transform-origin: 8px 8px; }
 .ficon-compass .a { transform-box: view-box; transform-origin: 8px 8px; }
+.ficon-contrast .a { transform-box: view-box; transform-origin: 8px 8px; }
 .ficon-corner-down-left .a { transform-origin: 100% 50%; }
 .ficon-corner-down-right .a { transform-origin: 0% 50%; }
 .ficon-drama .a { transform-origin: 50% 0%; }
@@ -45,11 +47,15 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
 .ficon-layout-dashboard .a { transform-origin: 50% 0%; }
 .ficon-layout-dashboard .b { transform-origin: 50% 100%; }
 .ficon-library .a { transform-box: view-box; transform-origin: 12.5px 13px; }
+.ficon-lock-open .a { transform-box: view-box; transform-origin: 5.5px 7px; }
 .ficon-log-in .a { transform-origin: 100% 50%; }
 .ficon-mail .a { transform-origin: 50% 0%; }
 .ficon-message-square { transform-origin: 20% 90%; }
 .ficon-presentation .a { transform-origin: 50% 0%; }
 .ficon-radar .a { transform-box: view-box; transform-origin: 8px 8px; }
+.ficon-scan-face .a { transform-box: view-box; transform-origin: 8px 8px; }
+.ficon-scissors .a { transform-box: view-box; transform-origin: 8px 8px; }
+.ficon-scissors .b { transform-box: view-box; transform-origin: 8px 8px; }
 .ficon-shield-question .a { transform-box: view-box; transform-origin: 8px 11px; }
 .ficon-sticky-note .a { transform-origin: 100% 100%; }
 .ficon-sun-medium .a { transform-box: view-box; transform-origin: 8px 8px; }
@@ -78,6 +84,7 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-arrow-right:not([class*='animate-']) .b, .ficon-arrow-right.ficon-play .b { animation: ficon-arrow-right-lead 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-arrow-up:not([class*='animate-']) .a, .ficon-arrow-up.ficon-play .a { animation: ficon-arrow-up-stretch 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-arrow-up:not([class*='animate-']) .b, .ficon-arrow-up.ficon-play .b { animation: ficon-arrow-up-lead 260ms ease-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-arrow-up-narrow-wide:not([class*='animate-']) .a, .ficon-arrow-up-narrow-wide.ficon-play .a { animation: ficon-arrow-up-narrow-wide-lift 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-at-sign:not([class*='animate-']) .a, .ficon-at-sign.ficon-play .a { animation: ficon-at-sign-ping 260ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-badge-dollar-sign:not([class*='animate-']) .a, .ficon-badge-dollar-sign.ficon-play .a { animation: ficon-badge-dollar-sign-ping 260ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-ban:not([class*='animate-']) .a, .ficon-ban.ficon-play .a { stroke-dasharray: 1; animation: ficon-ban-draw 260ms ease-out; }
@@ -96,6 +103,7 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-brain:not([class*='animate-']) .b, .ficon-brain.ficon-play .b { animation: ficon-brain-think 280ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-briefcase:not([class*='animate-']) .a, .ficon-briefcase.ficon-play .a { animation: ficon-briefcase-swing 300ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-briefcase-business:not([class*='animate-']) .a, .ficon-briefcase-business.ficon-play .a { stroke-dasharray: 1; animation: ficon-briefcase-business-draw 260ms ease-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-brush:not([class*='animate-']), .ficon-brush.ficon-play { animation: ficon-brush-sweep 280ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-bug:not([class*='animate-']) .a, .ficon-bug.ficon-play .a { animation: ficon-bug-scuttle 260ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-burst:not([class*='animate-']) .a, .ficon-burst.ficon-play .a { animation: ficon-burst-burst 240ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-burst:not([class*='animate-']) .b, .ficon-burst.ficon-play .b { animation: ficon-burst-spark 240ms ease-out 50ms; }
@@ -113,6 +121,7 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-circle:not([class*='animate-']), .ficon-circle.ficon-play { animation: ficon-circle-breathe 280ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-circle-alert:not([class*='animate-']) .a, .ficon-circle-alert.ficon-play .a { animation: ficon-circle-alert-shake 300ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-circle-check:not([class*='animate-']) .a, .ficon-circle-check.ficon-play .a { stroke-dasharray: 1; animation: ficon-circle-check-draw 260ms ease-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-circle-help:not([class*='animate-']) .a, .ficon-circle-help.ficon-play .a { animation: ficon-circle-help-ponder 280ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-circle-stop:not([class*='animate-']) .a, .ficon-circle-stop.ficon-play .a { animation: ficon-circle-stop-halt 220ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-circle-x:not([class*='animate-']) .a, .ficon-circle-x.ficon-play .a { animation: ficon-circle-x-dismiss 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-clipboard-list:not([class*='animate-']) .a, .ficon-clipboard-list.ficon-play .a { stroke-dasharray: 1; animation: ficon-clipboard-list-draw 200ms ease-out; }
@@ -125,18 +134,24 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-code-2:not([class*='animate-']) .b, .ficon-code-2.ficon-play .b { animation: ficon-code-2-open-r 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-code-2:not([class*='animate-']) .c, .ficon-code-2.ficon-play .c { animation: ficon-code-2-tilt 260ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-compass:not([class*='animate-']) .a, .ficon-compass.ficon-play .a { animation: ficon-compass-swing 300ms ease-in-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-contrast:not([class*='animate-']) .a, .ficon-contrast.ficon-play .a { animation: ficon-contrast-flip 300ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-copy:not([class*='animate-']) .a, .ficon-copy.ficon-play .a { animation: ficon-copy-peel 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-corner-down-left:not([class*='animate-']) .a, .ficon-corner-down-left.ficon-play .a { animation: ficon-corner-down-left-reach 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-corner-down-left:not([class*='animate-']) .b, .ficon-corner-down-left.ficon-play .b { animation: ficon-corner-down-left-lead 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-corner-down-right:not([class*='animate-']) .a, .ficon-corner-down-right.ficon-play .a { animation: ficon-corner-down-right-reach 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-corner-down-right:not([class*='animate-']) .b, .ficon-corner-down-right.ficon-play .b { animation: ficon-corner-down-right-lead 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-cpu:not([class*='animate-']) .a, .ficon-cpu.ficon-play .a { animation: ficon-cpu-pulse 240ms ease-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-crop:not([class*='animate-']) .a, .ficon-crop.ficon-play .a { animation: ficon-crop-trim 260ms ease-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-database:not([class*='animate-']) .a, .ficon-database.ficon-play .a { animation: ficon-database-open 260ms ease-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-dice-3:not([class*='animate-']), .ficon-dice-3.ficon-play { animation: ficon-dice-3-tumble 280ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-dices:not([class*='animate-']), .ficon-dices.ficon-play { animation: ficon-dices-roll 300ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-download:not([class*='animate-']) .a, .ficon-download.ficon-play .a { animation: ficon-download-drop 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-drama:not([class*='animate-']) .a, .ficon-drama.ficon-play .a { animation: ficon-drama-grin 260ms ease-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-droplet:not([class*='animate-']), .ficon-droplet.ficon-play { animation: ficon-droplet-fall 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-ellipsis:not([class*='animate-']) .a, .ficon-ellipsis.ficon-play .a { animation: ficon-ellipsis-hop 200ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-ellipsis:not([class*='animate-']) .b, .ficon-ellipsis.ficon-play .b { animation: ficon-ellipsis-hop 200ms ease-out 50ms; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-ellipsis:not([class*='animate-']) .c, .ficon-ellipsis.ficon-play .c { animation: ficon-ellipsis-hop 200ms ease-out 100ms; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-eraser:not([class*='animate-']) .a, .ficon-eraser.ficon-play .a { animation: ficon-eraser-scrub 280ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-external-link:not([class*='animate-']) .a, .ficon-external-link.ficon-play .a { animation: ficon-external-link-leave 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-eye:not([class*='animate-']) .a, .ficon-eye.ficon-play .a { animation: ficon-eye-look 300ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-eye-off:not([class*='animate-']) .a, .ficon-eye-off.ficon-play .a { stroke-dasharray: 1; animation: ficon-eye-off-draw 260ms ease-out; }
@@ -182,6 +197,7 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-folder-tree:not([class*='animate-']) .b, .ficon-folder-tree.ficon-play .b { animation: ficon-folder-tree-grow 220ms ease-out 70ms; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-gallery-horizontal:not([class*='animate-']) .a, .ficon-gallery-horizontal.ficon-play .a { animation: ficon-gallery-horizontal-slide 280ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-gallery-horizontal:not([class*='animate-']) .b, .ficon-gallery-horizontal.ficon-play .b { animation: ficon-gallery-horizontal-dim 280ms ease-in-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-gamepad-2:not([class*='animate-']) .a, .ficon-gamepad-2.ficon-play .a { animation: ficon-gamepad-2-press 240ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-git-branch:not([class*='animate-']) .a, .ficon-git-branch.ficon-play .a { stroke-dasharray: 1; animation: ficon-git-branch-draw 220ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-git-branch:not([class*='animate-']) .b, .ficon-git-branch.ficon-play .b { animation: ficon-git-branch-pop 200ms ease-out 100ms; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-git-compare-arrows:not([class*='animate-']) .a, .ficon-git-compare-arrows.ficon-play .a { animation: ficon-git-compare-arrows-left 260ms ease-out; }
@@ -191,16 +207,23 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-globe:not([class*='animate-']) .a, .ficon-globe.ficon-play .a { animation: ficon-globe-spin 280ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-globe-2:not([class*='animate-']) .a, .ficon-globe-2.ficon-play .a { animation: ficon-globe-2-turn 280ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-graduation-cap:not([class*='animate-']) .a, .ficon-graduation-cap.ficon-play .a { animation: ficon-graduation-cap-swing 300ms ease-in-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-grip-horizontal:not([class*='animate-']), .ficon-grip-horizontal.ficon-play { animation: ficon-grip-horizontal-drag-x 280ms ease-in-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-grip-vertical:not([class*='animate-']), .ficon-grip-vertical.ficon-play { animation: ficon-grip-vertical-drag-y 280ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-hammer:not([class*='animate-']) .a, .ficon-hammer.ficon-play .a { animation: ficon-hammer-strike 280ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-hand:not([class*='animate-']) .a, .ficon-hand.ficon-play .a { animation: ficon-hand-wave 300ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-hard-drive:not([class*='animate-']) .a, .ficon-hard-drive.ficon-play .a { animation: ficon-hard-drive-blink 260ms ease-in-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-hash:not([class*='animate-']) .a, .ficon-hash.ficon-play .a { animation: ficon-hash-slide 260ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-highlighter:not([class*='animate-']) .a, .ficon-highlighter.ficon-play .a { stroke-dasharray: 1; animation: ficon-highlighter-draw 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-history:not([class*='animate-']) .a, .ficon-history.ficon-play .a { animation: ficon-history-back 300ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-history:not([class*='animate-']) .b, .ficon-history.ficon-play .b { animation: ficon-history-rewind 300ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-house:not([class*='animate-']) .a, .ficon-house.ficon-play .a { animation: ficon-house-door 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-image:not([class*='animate-']) .a, .ficon-image.ficon-play .a { animation: ficon-image-rise 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-image-plus:not([class*='animate-']) .a, .ficon-image-plus.ficon-play .a { animation: ficon-image-plus-turn 260ms ease-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-images:not([class*='animate-']) .a, .ficon-images.ficon-play .a { animation: ficon-images-deal 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-info:not([class*='animate-']) .a, .ficon-info.ficon-play .a { animation: ficon-info-bounce 260ms ease-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-kanban:not([class*='animate-']) .a, .ficon-kanban.ficon-play .a { animation: ficon-kanban-card 220ms ease-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-kanban:not([class*='animate-']) .b, .ficon-kanban.ficon-play .b { animation: ficon-kanban-card 220ms ease-out 40ms; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-kanban:not([class*='animate-']) .c, .ficon-kanban.ficon-play .c { animation: ficon-kanban-card 220ms ease-out 80ms; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-laptop:not([class*='animate-']) .a, .ficon-laptop.ficon-play .a { animation: ficon-laptop-open 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-layers:not([class*='animate-']) .a, .ficon-layers.ficon-play .a { animation: ficon-layers-up 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-layers:not([class*='animate-']) .c, .ficon-layers.ficon-play .c { animation: ficon-layers-down 260ms ease-out; }
@@ -220,6 +243,8 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-list-ordered:not([class*='animate-']) .a, .ficon-list-ordered.ficon-play .a { animation: ficon-list-ordered-count 160ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-list-ordered:not([class*='animate-']) .b, .ficon-list-ordered.ficon-play .b { animation: ficon-list-ordered-count 160ms ease-out 60ms; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-list-ordered:not([class*='animate-']) .c, .ficon-list-ordered.ficon-play .c { animation: ficon-list-ordered-count 160ms ease-out 120ms; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-lock:not([class*='animate-']) .a, .ficon-lock.ficon-play .a { animation: ficon-lock-tug 240ms ease-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-lock-open:not([class*='animate-']) .a, .ficon-lock-open.ficon-play .a { animation: ficon-lock-open-swing 280ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-log-in:not([class*='animate-']) .a, .ficon-log-in.ficon-play .a { animation: ficon-log-in-enter-shaft 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-log-in:not([class*='animate-']) .b, .ficon-log-in.ficon-play .b { animation: ficon-log-in-enter 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-mail:not([class*='animate-']) .a, .ficon-mail.ficon-play .a { animation: ficon-mail-flap 260ms ease-in-out; }
@@ -287,6 +312,13 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-rotate-ccw:not([class*='animate-']), .ficon-rotate-ccw.ficon-play { animation: ficon-rotate-ccw-turn 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-rotate-cw:not([class*='animate-']), .ficon-rotate-cw.ficon-play { animation: ficon-rotate-cw-turn 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-save:not([class*='animate-']) .a, .ficon-save.ficon-play .a { stroke-dasharray: 1; animation: ficon-save-draw 260ms ease-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-scan:not([class*='animate-']) .a, .ficon-scan.ficon-play .a { animation: ficon-scan-tl 260ms ease-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-scan:not([class*='animate-']) .b, .ficon-scan.ficon-play .b { animation: ficon-scan-tr 260ms ease-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-scan:not([class*='animate-']) .c, .ficon-scan.ficon-play .c { animation: ficon-scan-br 260ms ease-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-scan:not([class*='animate-']) .d, .ficon-scan.ficon-play .d { animation: ficon-scan-bl 260ms ease-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-scan-face:not([class*='animate-']) .a, .ficon-scan-face.ficon-play .a { animation: ficon-scan-face-spot 260ms ease-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-scissors:not([class*='animate-']) .a, .ficon-scissors.ficon-play .a { animation: ficon-scissors-snip-a 260ms ease-in-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-scissors:not([class*='animate-']) .b, .ficon-scissors.ficon-play .b { animation: ficon-scissors-snip-b 260ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-scroll-text:not([class*='animate-']) .a, .ficon-scroll-text.ficon-play .a { stroke-dasharray: 1; animation: ficon-scroll-text-draw 160ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-scroll-text:not([class*='animate-']) .b, .ficon-scroll-text.ficon-play .b { stroke-dasharray: 1; animation: ficon-scroll-text-draw 160ms ease-out 120ms; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-search:not([class*='animate-']), .ficon-search.ficon-play { animation: ficon-search-scan 300ms ease-in-out; }
@@ -299,6 +331,8 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-shapes:not([class*='animate-']) .a, .ficon-shapes.ficon-play .a { animation: ficon-shapes-pop 200ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-shapes:not([class*='animate-']) .b, .ficon-shapes.ficon-play .b { animation: ficon-shapes-pop 200ms ease-out 50ms; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-shapes:not([class*='animate-']) .c, .ficon-shapes.ficon-play .c { animation: ficon-shapes-pop 200ms ease-out 100ms; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-share-2:not([class*='animate-']) .a, .ficon-share-2.ficon-play .a { animation: ficon-share-2-pop 240ms ease-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-share-2:not([class*='animate-']) .b, .ficon-share-2.ficon-play .b { animation: ficon-share-2-pop 240ms ease-out 50ms; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-shield-check:not([class*='animate-']) .a, .ficon-shield-check.ficon-play .a { stroke-dasharray: 1; animation: ficon-shield-check-draw 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-shield-question:not([class*='animate-']) .a, .ficon-shield-question.ficon-play .a { animation: ficon-shield-question-tilt 280ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-skip-forward:not([class*='animate-']) .a, .ficon-skip-forward.ficon-play .a { animation: ficon-skip-forward-skip 240ms ease-out; }
@@ -312,6 +346,7 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-space:not([class*='animate-']), .ficon-space.ficon-play { animation: ficon-space-press 220ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-sparkles:not([class*='animate-']) .a, .ficon-sparkles.ficon-play .a { animation: ficon-sparkles-glint 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-sparkles:not([class*='animate-']) .b, .ficon-sparkles.ficon-play .b { animation: ficon-sparkles-twinkle 260ms ease-out 40ms; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-spline:not([class*='animate-']) .a, .ficon-spline.ficon-play .a { stroke-dasharray: 1; animation: ficon-spline-draw 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-square:not([class*='animate-']), .ficon-square.ficon-play { animation: ficon-square-press 200ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-square-dashed:not([class*='animate-']) .a, .ficon-square-dashed.ficon-play .a { animation: ficon-square-dashed-nw 240ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-square-dashed:not([class*='animate-']) .b, .ficon-square-dashed.ficon-play .b { animation: ficon-square-dashed-ne 240ms ease-out; }
@@ -331,6 +366,8 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-telescope:not([class*='animate-']) .a, .ficon-telescope.ficon-play .a { animation: ficon-telescope-aim 280ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-terminal:not([class*='animate-']) .a, .ficon-terminal.ficon-play .a { animation: ficon-terminal-blink 280ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-test-tube-2:not([class*='animate-']) .a, .ficon-test-tube-2.ficon-play .a { animation: ficon-test-tube-2-slosh 280ms ease-in-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-thumbs-down:not([class*='animate-']), .ficon-thumbs-down.ficon-play { animation: ficon-thumbs-down-dislike 260ms ease-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-thumbs-up:not([class*='animate-']), .ficon-thumbs-up.ficon-play { animation: ficon-thumbs-up-like 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-trash-2:not([class*='animate-']) .a, .ficon-trash-2.ficon-play .a { animation: ficon-trash-2-lid 280ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-triangle-alert:not([class*='animate-']) .a, .ficon-triangle-alert.ficon-play .a { animation: ficon-triangle-alert-warn 300ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-type:not([class*='animate-']), .ficon-type.ficon-play { animation: ficon-type-strike 220ms ease-out; }
@@ -338,6 +375,7 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-undo-2:not([class*='animate-']) .b, .ficon-undo-2.ficon-play .b { animation: ficon-undo-2-pull 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-upload:not([class*='animate-']) .a, .ficon-upload.ficon-play .a { animation: ficon-upload-lift 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-user-round:not([class*='animate-']) .a, .ficon-user-round.ficon-play .a { animation: ficon-user-round-nod 260ms ease-out; }
+  :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-users:not([class*='animate-']) .a, .ficon-users.ficon-play .a { animation: ficon-users-join 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-video:not([class*='animate-']) .a, .ficon-video.ficon-play .a { animation: ficon-video-roll 260ms ease-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-volume-2:not([class*='animate-']) .a, .ficon-volume-2.ficon-play .a { animation: ficon-volume-2-near 180ms ease-in-out; }
   :is(:is(button, a, [role='menuitem'], [role='tab'], [role='option'], label, summary):not(:disabled):hover, .ficon-play) .ficon-volume-2:not([class*='animate-']) .b, .ficon-volume-2.ficon-play .b { animation: ficon-volume-2-far 180ms ease-in-out 100ms; }
@@ -368,6 +406,7 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
 @keyframes ficon-arrow-right-lead { 50% { translate: 1.5px 0; } }
 @keyframes ficon-arrow-up-stretch { 50% { scale: 1 0.85; translate: 0 -1.5px; } }
 @keyframes ficon-arrow-up-lead { 50% { translate: 0 -1.5px; } }
+@keyframes ficon-arrow-up-narrow-wide-lift { 50% { translate: 0 -1.5px; } }
 @keyframes ficon-at-sign-ping { 50% { scale: 1.15; } }
 @keyframes ficon-badge-dollar-sign-ping { 50% { scale: 1.12; } }
 @keyframes ficon-ban-draw { from { stroke-dashoffset: 1; } }
@@ -383,6 +422,7 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
 @keyframes ficon-brain-think { 50% { scale: 1.1; } }
 @keyframes ficon-briefcase-swing { 30% { rotate: 6deg; } 70% { rotate: -4deg; } }
 @keyframes ficon-briefcase-business-draw { from { stroke-dashoffset: 1; } }
+@keyframes ficon-brush-sweep { 30% { rotate: -8deg; } 70% { rotate: 5deg; } }
 @keyframes ficon-bug-scuttle { 25% { translate: 0 -0.75px; } 75% { translate: 0 0.75px; } }
 @keyframes ficon-burst-burst { 50% { scale: 1.12; } }
 @keyframes ficon-burst-spark { 50% { scale: 1.12; opacity: 0.6; } }
@@ -399,6 +439,7 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
 @keyframes ficon-circle-breathe { 50% { scale: 0.9; } }
 @keyframes ficon-circle-alert-shake { 25% { rotate: -14deg; } 75% { rotate: 14deg; } }
 @keyframes ficon-circle-check-draw { from { stroke-dashoffset: 1; } }
+@keyframes ficon-circle-help-ponder { 50% { rotate: -12deg; } }
 @keyframes ficon-circle-stop-halt { 50% { scale: 0.85; } }
 @keyframes ficon-circle-x-dismiss { from { rotate: -90deg; scale: 0.85; } }
 @keyframes ficon-clipboard-list-draw { from { stroke-dashoffset: 1; } }
@@ -410,16 +451,22 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
 @keyframes ficon-code-2-open-r { 50% { translate: 1px 0; } }
 @keyframes ficon-code-2-tilt { 50% { rotate: 12deg; } }
 @keyframes ficon-compass-swing { 35% { rotate: 25deg; } 70% { rotate: -10deg; } }
+@keyframes ficon-contrast-flip { 50% { rotate: 180deg; } }
 @keyframes ficon-copy-peel { from { translate: -2px -2px; opacity: 0.4; } }
 @keyframes ficon-corner-down-left-reach { 50% { scale: 1.15 1; } }
 @keyframes ficon-corner-down-left-lead { 50% { translate: -1px 0; } }
 @keyframes ficon-corner-down-right-reach { 50% { scale: 1.15 1; } }
 @keyframes ficon-corner-down-right-lead { 50% { translate: 1px 0; } }
 @keyframes ficon-cpu-pulse { 50% { scale: 1.15; opacity: 0.5; } }
+@keyframes ficon-crop-trim { 50% { translate: -1px 1px; } }
+@keyframes ficon-database-open { 50% { translate: 0 -1px; } }
+@keyframes ficon-dice-3-tumble { 35% { rotate: 14deg; translate: 1px -1px; } 75% { rotate: -5deg; } }
 @keyframes ficon-dices-roll { 40% { rotate: -15deg; translate: -1px -1px; } 75% { rotate: 6deg; } }
 @keyframes ficon-download-drop { 50% { translate: 0 1.5px; } }
 @keyframes ficon-drama-grin { 50% { scale: 1.15; } }
+@keyframes ficon-droplet-fall { from { translate: 0 -2px; opacity: 0.4; } }
 @keyframes ficon-ellipsis-hop { 50% { translate: 0 -1.5px; } }
+@keyframes ficon-eraser-scrub { 30% { translate: -1px 0; } 70% { translate: 1px 0; } }
 @keyframes ficon-external-link-leave { 50% { translate: 1px -1px; } }
 @keyframes ficon-eye-look { 33% { translate: -1px 0; } 66% { translate: 1px 0; } }
 @keyframes ficon-eye-off-draw { from { stroke-dashoffset: 1; } }
@@ -459,6 +506,7 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
 @keyframes ficon-folder-tree-grow { from { translate: -1px 0; opacity: 0.4; } }
 @keyframes ficon-gallery-horizontal-slide { 50% { translate: -1px 0; } }
 @keyframes ficon-gallery-horizontal-dim { 50% { opacity: 0.4; } }
+@keyframes ficon-gamepad-2-press { 50% { scale: 0.85; } }
 @keyframes ficon-git-branch-draw { from { stroke-dashoffset: 1; } }
 @keyframes ficon-git-branch-pop { 50% { scale: 1.15; } }
 @keyframes ficon-git-compare-arrows-left { 50% { translate: -1px 0; } }
@@ -468,16 +516,21 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
 @keyframes ficon-globe-spin { 50% { translate: 1.5px 0; scale: 0.85 1; } }
 @keyframes ficon-globe-2-turn { from { translate: -1px 0; opacity: 0.3; } }
 @keyframes ficon-graduation-cap-swing { 30% { rotate: 25deg; } 70% { rotate: -12deg; } }
+@keyframes ficon-grip-horizontal-drag-x { 30% { translate: -1px 0; } 70% { translate: 1px 0; } }
+@keyframes ficon-grip-vertical-drag-y { 30% { translate: 0 -1px; } 70% { translate: 0 1px; } }
 @keyframes ficon-hammer-strike { 35% { rotate: -14deg; } 65% { rotate: 5deg; } }
 @keyframes ficon-hand-wave { 30% { rotate: 12deg; } 70% { rotate: -8deg; } }
 @keyframes ficon-hard-drive-blink { 50% { opacity: 0.3; } }
+@keyframes ficon-hash-slide { 50% { translate: 1px 0; } }
 @keyframes ficon-highlighter-draw { from { stroke-dashoffset: 1; } }
 @keyframes ficon-history-back { 50% { rotate: -60deg; } }
 @keyframes ficon-history-rewind { 50% { rotate: -12deg; } }
 @keyframes ficon-house-door { 50% { scale: 0.85 1; } }
 @keyframes ficon-image-rise { from { translate: 0 1.5px; opacity: 0.3; } }
 @keyframes ficon-image-plus-turn { from { rotate: -90deg; } }
+@keyframes ficon-images-deal { from { translate: -1.5px 1.5px; opacity: 0.3; } }
 @keyframes ficon-info-bounce { 40% { translate: 0 -1.5px; } }
+@keyframes ficon-kanban-card { from { translate: 0 -1.5px; opacity: 0.3; } }
 @keyframes ficon-laptop-open { 50% { scale: 1 0.85; } }
 @keyframes ficon-layers-up { 50% { translate: 0 -1px; } }
 @keyframes ficon-layers-down { 50% { translate: 0 1px; } }
@@ -490,6 +543,8 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
 @keyframes ficon-link-2-join-right { from { translate: 1.5px 0; } }
 @keyframes ficon-list-checks-tick { from { stroke-dashoffset: 1; } }
 @keyframes ficon-list-ordered-count { 50% { scale: 1.15; translate: -0.5px 0; } }
+@keyframes ficon-lock-tug { 50% { translate: 0 -1px; } }
+@keyframes ficon-lock-open-swing { 50% { rotate: -14deg; } }
 @keyframes ficon-log-in-enter-shaft { 50% { scale: 0.85 1; translate: 1.5px 0; } }
 @keyframes ficon-log-in-enter { 50% { translate: 1.5px 0; } }
 @keyframes ficon-mail-flap { 50% { scale: 1 0.6; } }
@@ -550,6 +605,13 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
 @keyframes ficon-rotate-ccw-turn { from { rotate: 90deg; } }
 @keyframes ficon-rotate-cw-turn { from { rotate: -90deg; } }
 @keyframes ficon-save-draw { from { stroke-dashoffset: 1; } }
+@keyframes ficon-scan-tl { 50% { translate: 1px 1px; } }
+@keyframes ficon-scan-tr { 50% { translate: -1px 1px; } }
+@keyframes ficon-scan-br { 50% { translate: -1px -1px; } }
+@keyframes ficon-scan-bl { 50% { translate: 1px -1px; } }
+@keyframes ficon-scan-face-spot { from { scale: 0.85; opacity: 0.4; } }
+@keyframes ficon-scissors-snip-a { 50% { rotate: 10deg; } }
+@keyframes ficon-scissors-snip-b { 50% { rotate: -10deg; } }
 @keyframes ficon-scroll-text-draw { from { stroke-dashoffset: 1; } }
 @keyframes ficon-search-scan { 33% { translate: -1px -1px; } 66% { translate: 1px -1px; } }
 @keyframes ficon-send-fly { 45% { translate: 2px -2px; opacity: 0.4; } }
@@ -558,6 +620,7 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
 @keyframes ficon-settings-2-right { 50% { translate: 1.5px 0; } }
 @keyframes ficon-settings-2-left { 50% { translate: -1.5px 0; } }
 @keyframes ficon-shapes-pop { 50% { scale: 1.15; } }
+@keyframes ficon-share-2-pop { from { scale: 0.85; opacity: 0.3; } }
 @keyframes ficon-shield-check-draw { from { stroke-dashoffset: 1; } }
 @keyframes ficon-shield-question-tilt { 30% { rotate: -10deg; } 70% { rotate: 8deg; } }
 @keyframes ficon-skip-forward-skip { 50% { translate: 1.5px 0; } }
@@ -569,6 +632,7 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
 @keyframes ficon-space-press { 50% { translate: 0 1.5px; scale: 1 0.88; } }
 @keyframes ficon-sparkles-glint { 50% { scale: 0.88; } }
 @keyframes ficon-sparkles-twinkle { from { rotate: 90deg; opacity: 0.3; } }
+@keyframes ficon-spline-draw { from { stroke-dashoffset: 1; } }
 @keyframes ficon-square-press { 50% { scale: 0.9; } }
 @keyframes ficon-square-dashed-nw { 50% { translate: -0.75px -0.75px; } }
 @keyframes ficon-square-dashed-ne { 50% { translate: 0.75px -0.75px; } }
@@ -588,6 +652,8 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
 @keyframes ficon-telescope-aim { 50% { rotate: -10deg; } }
 @keyframes ficon-terminal-blink { 50% { opacity: 0.3; } }
 @keyframes ficon-test-tube-2-slosh { 30% { rotate: -12deg; } 70% { rotate: 10deg; } }
+@keyframes ficon-thumbs-down-dislike { 50% { rotate: 10deg; translate: 0 1px; } }
+@keyframes ficon-thumbs-up-like { 50% { rotate: -10deg; translate: 0 -1px; } }
 @keyframes ficon-trash-2-lid { 45% { rotate: 14deg; translate: 0 -1px; } }
 @keyframes ficon-triangle-alert-warn { 25% { rotate: -12deg; } 75% { rotate: 12deg; } }
 @keyframes ficon-type-strike { 40% { translate: 0 1px; scale: 0.94; } }
@@ -595,6 +661,7 @@ svg.ficon :is(.a, .b, .c, .d, .e, .f) { transform-box: fill-box; transform-origi
 @keyframes ficon-undo-2-pull { 50% { translate: -1px 0; } }
 @keyframes ficon-upload-lift { 50% { translate: 0 -1.5px; } }
 @keyframes ficon-user-round-nod { 50% { translate: 0 -1px; } }
+@keyframes ficon-users-join { from { translate: -1.5px 0; opacity: 0.3; } }
 @keyframes ficon-video-roll { 50% { scale: 1.12; } }
 @keyframes ficon-volume-2-near { 50% { opacity: 0.3; } }
 @keyframes ficon-volume-2-far { 50% { opacity: 0.3; } }

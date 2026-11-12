@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M7.5 8 11.5 4a1.5 1.5 0 0 1 2.12 2.12l-4 4"/>
+  <path d="M7.5 8C5.5 7.5 3.5 9 3.5 11c0 1.5-.5 2.5-1.5 3H5c2.5 0 4.6-1.5 4.62-3.88"/>
+  <style>
+    svg { animation: sweep 280ms ease-in-out; }
+    @keyframes sweep { 30% { rotate: -8deg; } 70% { rotate: 5deg; } }
+  </style>
+</svg>

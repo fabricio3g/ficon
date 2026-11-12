@@ -1,7 +1,7 @@
 {
   "name": "ficon",
-  "version": "0.2.0",
-  "description": "208 icons drawn for 16px, each with its own hover animation. Plain SVG and CSS.",
+  "version": "0.3.0",
+  "description": "233 icons drawn for 16px, each with its own hover animation. Plain SVG and CSS.",
   "license": "MIT",
   "type": "module",
   "repository": "github:fabricio3g/ficon",
@@ -15,7 +15,8 @@
   },
   "scripts": {
     "build": "node scripts/build.mjs --sheet index.html",
-    "check": "node scripts/build.mjs --check"
+    "check": "node scripts/build.mjs --check",
+    "smoke": "node scripts/smoke.mjs"
   },
   "peerDependencies": { "react": ">=18", "svelte": "^5.0.0", "vue": "^3.3.0" },
   "peerDependenciesMeta": { "react": { "optional": true }, "svelte": { "optional": true }, "vue": { "optional": true } }
